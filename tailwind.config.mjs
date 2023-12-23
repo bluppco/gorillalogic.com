@@ -7,11 +7,11 @@ export default {
 				'open_sans': ["Open Sans","sans-serif"],
 				'lora': ["Lora","serif"],
 			},
+			colors: {
+				"body": "#225FC9",
+				"background": "#1F1D1D"
+			}
 		},
-		colors: {
-			"body": "#225FC9",
-			"background": "#1F1D1D"
-		}
 	},
 	plugins: [],
 }
