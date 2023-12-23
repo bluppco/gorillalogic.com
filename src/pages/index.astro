@@ -1,17 +1,26 @@
 ---
 import { endpointFetch } from "../functions/endpoint"
 
-const runtime = Astro.locals.runtime;
-const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
+// const runtime = Astro.locals.runtime;
+// const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
 
-// NETWORK CALL TO GET DATA
-const network_data = await fetch( endpoint + "/home" )
-const data_json = await network_data.json()
+// // NETWORK CALL TO GET DATA
+// const network_data = await fetch( endpoint + "/home" )
+// const data_json = await network_data.json()
 
 // IMPORT ASTRO COMPONENTS
 import Layout from "../layouts/Layout.astro"
 import HeaderBanner from "../components/common/HeaderBanner.astro"
+import Container from "../layouts/Container.astro";
 ---
 <Layout>
 	<HeaderBanner />
+	<section class="bg-background py-10">
+		<Container>
+			<section class="grid grid-cols-2">
+				<!-- HAVE TO HARDCODE THE COLOR AS WHITE IS NOT WORKING DIRECTLY SINCE TAILWIND UPDATE 3.4.0 -->
+				<h1 class="font-lora text-7xl text-[#fff]">We build the technology that tells your story.</h1>
+			</section>
+		</Container>
+	</section>
 </Layout>
