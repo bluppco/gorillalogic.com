@@ -12,6 +12,10 @@ import { endpointFetch } from "../functions/endpoint"
 import Layout from "../layouts/Layout.astro"
 import HeaderBanner from "../components/common/HeaderBanner.astro"
 import Container from "../layouts/Container.astro";
+import Footer from "../components/common/Footer.astro"
+import LatestInsights from "../components/home/LatestInsights.astro"
+import Locations from "../components/home/Locations.astro"
+import ServicesAndNearShoring from "../components/home/ServicesAndNearShoring.astro"
 ---
 <Layout>
 	<HeaderBanner />
@@ -23,4 +27,8 @@ import Container from "../layouts/Container.astro";
 			</section>
 		</Container>
 	</section>
+	<ServicesAndNearShoring />
+	<Locations />
+	<LatestInsights />
+	<Footer />
 </Layout>
