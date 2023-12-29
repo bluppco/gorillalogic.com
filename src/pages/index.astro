@@ -11,18 +11,21 @@ import { endpointFetch } from "../functions/endpoint"
 // IMPORT ASTRO COMPONENTS
 import Layout from "../layouts/Layout.astro"
 
-import HeaderBanner from "../components/common/HeaderBanner.astro"
 import Footer from "../components/common/footer/Footer.astro"
+import Header from "../components/common/Header.astro"
+import HeaderBanner from "../components/common/HeaderBanner.astro"
 
+import CaseStudies from "../components/home/CaseStudies.astro"
 import Hero from "../components/home/Hero.astro"
 import LatestInsights from "../components/home/LatestInsights.astro"
 import Locations from "../components/home/Locations.astro"
 import ReadWhy from "../components/home/ReadWhy.astro"
-import CaseStudies from "../components/home/CaseStudies.astro"
 import ServicesAndNearShoring from "../components/home/ServicesAndNearShoring.astro"
+
 ---
 <Layout>
 	<HeaderBanner />
+	<Header />
 	<Hero />
 	<ServicesAndNearShoring />
 	<Locations />
