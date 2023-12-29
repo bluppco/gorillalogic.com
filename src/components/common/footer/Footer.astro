@@ -1,0 +1,124 @@
+---
+// IMPORT ASTRO LAYOUTS
+import Container from '../../../layouts/Container.astro'
+
+// IMPORT ASTRO COMPONENTS
+import SocialIcons from './SocialIcons.astro'
+
+import { getCollection } from 'astro:content'
+
+let footer_column_one = await getCollection('footer-column-one')
+footer_column_one = footer_column_one.sort((a, b) => a.data.order - b.data.order)
+footer_column_one = footer_column_one.filter( ( item ) => item.data.live )
+
+let footer_column_two = await getCollection('footer-column-two')
+footer_column_two = footer_column_two.sort((a, b) => a.data.order - b.data.order)
+footer_column_two = footer_column_two.filter( ( item ) => item.data.live )
+
+let footer_column_three = await getCollection('footer-column-three')
+footer_column_three = footer_column_three.sort((a, b) => a.data.order - b.data.order)
+footer_column_three = footer_column_three.filter( ( item ) => item.data.live )
+
+import { frontmatter as footerColumnOne } from "../../../content/footer-titles/title-one.md"
+import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/title-two.md"
+---
+<footer class="bg-black z-30 relative">
+    <Container>
+        <section class="py-20 border-b border-white">
+            <div class="w-40 aspect-video pb-10">
+                <img
+                    src="/logo/gl_logo.svg"
+                    alt=""
+                    class="w-40 aspect-video"
+                />
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-6 gap-10">
+                <div class="flex flex-col items-center md:items-start col-span-2">
+                    <div class="pb-2">
+                        <p class="uppercase text-white/60">{ footerColumnOne.title }</p>
+                    </div>
+                    {
+
+                        footer_column_one.map( ( item ) => {
+
+                            return (
+                                <div class="flex items-center gap-4">
+                                    <ul class="py-1">
+                                        <li class="text-white text-4xl group">
+                                            <p>{ item.data.title }</p>
+                                            <div class="w-0 bg-white group-hover:w-full h-[1px] transition-width duration-200 ease-in"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            )
+
+                        })
+
+                    }
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+                    <div class="pb-2">
+                        <p class="uppercase text-white/60">{ footerColumnTwo.title }</p>
+                    </div>
+                    {
+
+                        footer_column_two.map( ( item ) => {
+
+                            return (
+                                <div class="flex items-center gap-4">
+                                    <ul class="py-1">
+                                        <li class="text-white text-lg group">
+                                            <a href={ item.data.link }>
+                                                <p>{ item.data.title }</p>
+                                            </a>
+                                            <div class="w-0 bg-white group-hover:w-full h-[1px] transition-width duration-200 ease-in"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            )
+
+                        })
+
+                    }
+                </div>
+                <div class="flex flex-col items-center md:items-start pt-8">
+                    {
+
+                        footer_column_three.map( ( item ) => {
+
+                            return (
+                                <div class="flex items-center gap-4">
+                                    <ul class="py-1">
+                                        <li class="text-white text-lg group">
+                                            <a href={ item.data.link }>
+                                                <p>{ item.data.title }</p>
+                                            </a>
+                                            <div class="w-0 bg-white group-hover:w-full h-[1px] transition-width duration-200 ease-in"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            )
+
+                        })
+
+                    }
+                </div>
+                <div>
+                    <button class="text-white">Contact Us</button>
+                </div>
+            </div>
+        </section>
+        <section class="flex items-center justify-between py-10">
+            <div class="flex gap-10">
+                <div class="flex gap-4">
+                    <p class="text-white">© 2023 Gorilla Logic LLC.</p>
+                    <p class="text-white">HQ Address: 8001 Arista Pl, Ste 600, Broomfield, CO 80021</p>
+                </div>
+                <p class="text-white underline underline-offset-4">Privacy Policy</p>
+                <p class="text-white underline underline-offset-4">Cookie Policy</p>
+            </div>
+            <!-- SOCIAL ICONS -->
+            <SocialIcons />
+        </section>
+    </Container>
+</footer>
