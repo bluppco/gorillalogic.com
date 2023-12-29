@@ -10,25 +10,27 @@ import { endpointFetch } from "../functions/endpoint"
 
 // IMPORT ASTRO COMPONENTS
 import Layout from "../layouts/Layout.astro"
-import HeaderBanner from "../components/common/HeaderBanner.astro"
-import Container from "../layouts/Container.astro";
+
 import Footer from "../components/common/footer/Footer.astro"
+import Header from "../components/common/Header.astro"
+import HeaderBanner from "../components/common/HeaderBanner.astro"
+
+import CaseStudies from "../components/home/CaseStudies.astro"
+import Hero from "../components/home/Hero.astro"
 import LatestInsights from "../components/home/LatestInsights.astro"
 import Locations from "../components/home/Locations.astro"
+import ReadWhy from "../components/home/ReadWhy.astro"
 import ServicesAndNearShoring from "../components/home/ServicesAndNearShoring.astro"
+
 ---
 <Layout>
 	<HeaderBanner />
-	<section class="bg-background py-10">
-		<Container>
-			<section class="grid grid-cols-2">
-				<!-- HAVE TO HARDCODE THE COLOR AS WHITE IS NOT WORKING DIRECTLY SINCE TAILWIND UPDATE 3.4.0 -->
-				<h1 class="font-lora text-7xl text-[#fff]">We build the technology that tells your story.</h1>
-			</section>
-		</Container>
-	</section>
+	<Header />
+	<Hero />
 	<ServicesAndNearShoring />
 	<Locations />
+	<ReadWhy />
+	<CaseStudies />
 	<LatestInsights />
 	<Footer />
 </Layout>
