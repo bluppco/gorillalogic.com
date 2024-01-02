@@ -1,0 +1,37 @@
+---
+// IMPORT ASTRO LAYOUTS
+import Container from "../../../layouts/Container.astro"
+
+// IMPORT ASTRO ATOMS
+import Button from "../../../atoms/Button.astro"
+
+// IMPORT ASTRO COMPONENTS
+import HeaderItem from "./HeaderItem.astro"
+---
+<header class="hidden md:block">
+    <section class="flex items-center justify-center h-20 z-50 relative bg-background border-b border-b-white">
+        <Container>
+            <nav class="flex justify-between items-center">
+                <a href="/">
+                    <div class="w-32 aspect-video">
+                        <img
+                            src="/logo/gl_logo.svg"
+                            alt="Gorilla Logic Logo"
+                            class="w-32 aspect-video"
+                        />
+                    </div>
+                </a>
+                <div class="flex items-center gap-8">
+                    <ul class="flex items-center gap-8">
+                        <HeaderItem>About Us</HeaderItem>
+                        <HeaderItem>Work</HeaderItem>
+                        <HeaderItem>Services</HeaderItem>
+                        <HeaderItem>Community and Careers</HeaderItem>
+                        <HeaderItem>Blog and Resources</HeaderItem>
+                    </ul>
+                    <Button aria-label="talk to an expert">Talk to an expert</Button>
+                </div>
+            </nav>
+        </Container>
+    </section>
+</header>
