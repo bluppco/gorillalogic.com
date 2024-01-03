@@ -1,0 +1,25 @@
+---
+// IMPORT ASTRO ATOMS
+import ArrowAnchor from "../../../atoms/ArrowAnchor.astro"
+import H3 from "../../../atoms/H3.astro"
+
+const {
+
+    src,
+    alt,
+    title
+
+} = Astro.props
+---
+<div class="space-y-6">
+    <div class="w-full aspect-video bg-zinc-200">
+        <img
+            src={ src }
+            alt={ alt }
+            class="h-full w-full"
+        />
+    </div>
+    <H3>{ title }</H3>
+    <ArrowAnchor>Read More</ArrowAnchor>
+</div>
+
