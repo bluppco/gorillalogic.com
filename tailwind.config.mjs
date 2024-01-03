@@ -17,7 +17,8 @@ export default {
 			},
 			colors: {
 				"body": "#225FC9",
-				"background": "#1F1D1D"
+				"background": "#1F1D1D",
+				"gl_blue": "#225fc9",
 			}
 		},
 	},

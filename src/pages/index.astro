@@ -8,9 +8,11 @@ import { endpointFetch } from "../functions/endpoint"
 // const network_data = await fetch( endpoint + "/home" )
 // const data_json = await network_data.json()
 
-// IMPORT ASTRO COMPONENTS
+// IMPORT ASTRO LAYOUTS
 import Layout from "../layouts/Layout.astro"
+import Container from "../layouts/Container.astro"
 
+// IMPORT ASTRO COMPONENTS
 import Footer from "../components/common/footer/Footer.astro"
 import Header from "../components/common/header/Header.astro"
 import HeaderBanner from "../components/common/HeaderBanner.astro"
@@ -20,14 +22,16 @@ import Hero from "../components/home/Hero.astro"
 import LatestInsights from "../components/home/LatestInsights.astro"
 import Locations from "../components/home/Locations.astro"
 import ReadWhy from "../components/home/ReadWhy.astro"
-import ServicesAndNearShoring from "../components/home/ServicesAndNearShoring.astro"
+import ServicesAndNearShoring from "../components/home/ServicesAndNearShoring.jsx"
 
 ---
 <Layout>
 	<HeaderBanner />
 	<Header />
 	<Hero />
-	<ServicesAndNearShoring />
+	<Container>
+		<ServicesAndNearShoring />
+	</Container>
 	<Locations />
 	<ReadWhy />
 	<CaseStudies />
