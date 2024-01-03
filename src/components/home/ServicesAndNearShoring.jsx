@@ -7,7 +7,7 @@ const ServicesAndNearShoring = () => {
 
 	return(
 		<section class="py-20">
-			<section class="grid grid-cols-2 gap-10">
+			<section class="grid grid-cols-2 gap-20">
 				<div className="space-y-20">
 					<div className="space-y-6">
 						<H2JSX>Become unstoppable with a committed development partner.</H2JSX>
@@ -20,22 +20,22 @@ const ServicesAndNearShoring = () => {
 						<ArrowAnchorJSX>Explore nearshoring</ArrowAnchorJSX>
 					</div>
 				</div>
-				<section className="flex flex-col gap-20 justify-self-end relative">
-					<div className="w-60 aspect-[2/3] bg-zinc-200">
+				<section className="flex flex-col gap-20 relative">
+					<div className="w-60 aspect-[2/3] bg-zinc-200 absolute top-0 left-60">
 						<img
 							src=""
 							alt=""
 							className="w-full h-full"
 						/>
 					</div>
-					<div className="w-60 aspect-[2/3] bg-zinc-300 absolute top-44 right-48 z-10">
+					<div className="w-60 aspect-[2/3] bg-zinc-300 z-10 absolute top-48 left-12">
 						<img
 							src=""
 							alt=""
 							className="w-full h-full"
 						/>
 					</div>
-					<div className="w-60 aspect-[2/3] bg-zinc-400 z-20">
+					<div className="w-60 aspect-[2/3] bg-zinc-400 z-20 absolute top-[460px] left-60">
 						<img
 							src=""
 							alt=""
