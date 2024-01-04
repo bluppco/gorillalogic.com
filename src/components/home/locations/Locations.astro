@@ -1,12 +1,32 @@
 ---
 // IMPORT ASTRO COMPONENTS
 import Location from "./Location.astro"
+
+const data = Array(4).fill({
+
+    title: "United States",
+    src: "",
+    alt: "",
+    video_src: "/united_states.mp4"
+
+})
 ---
-<section class="grid grid-cols-4">
-    <Location
-        src=""
-        alt=""
-        title="Mexico"
-        video_src=""
-    />
+<section class="flex pb-32 pt-10">
+    {
+
+        data.map( ( item, index ) => {
+
+            return(
+                <Location
+                    top_position={ index % 2 - 1 }
+                    src={ item.src }
+                    alt={ item.alt }
+                    title={ item.title }
+                    video_src={ item.video_src }
+                />
+            )
+
+        })
+
+    }
 </section>
