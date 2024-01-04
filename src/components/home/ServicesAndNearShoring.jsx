@@ -62,21 +62,21 @@ const ServicesAndNearShoring = () => {
 					animate={ controls }
 				>
 					<section className="col-span-3 flex flex-col gap-20 relative pl-20">
-						<div className="w-72 aspect-[2/3] bg-zinc-200 absolute top-0 left-80">
+						<div className="w-72 aspect-[3/4] bg-zinc-200 absolute top-0 left-80">
 							<img
 								src=""
 								alt=""
 								className="w-full h-full"
 							/>
 						</div>
-						<div className="w-72 aspect-[2/3] bg-zinc-300 z-10 my-52">
+						<div className="w-72 aspect-[3/4] bg-zinc-300 z-10 my-52">
 							<img
 								src=""
 								alt=""
 								className="w-full h-full"
 							/>
 						</div>
-						<div className="w-72 aspect-[2/3] bg-zinc-400 z-20 absolute top-[540px] left-80">
+						<div className="w-72 aspect-[3/4] bg-zinc-400 z-20 absolute top-[480px] left-80">
 							<img
 								src=""
 								alt=""
