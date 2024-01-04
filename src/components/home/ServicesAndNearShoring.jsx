@@ -6,8 +6,8 @@ import ArrowAnchorJSX from "../../atoms/jsx/ArrowAnchor"
 const ServicesAndNearShoring = () => {
 
 	return(
-		<section class="py-20">
-			<section class="grid grid-cols-2 gap-20">
+		<section className="py-20">
+			<section className="grid grid-cols-2 gap-20">
 				<div className="space-y-20">
 					<div className="space-y-6">
 						<H2JSX>Become unstoppable with a committed development partner.</H2JSX>
