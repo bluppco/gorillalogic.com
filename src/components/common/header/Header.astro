@@ -11,8 +11,8 @@ import { getCollection } from "astro:content"
 let header_data = await getCollection("header")
 header_data = header_data.sort((a, b) => a.data.order - b.data.order)
 ---
-<header class="hidden md:block">
-    <section class="flex items-center justify-center h-20 z-50 bg-background border-b border-b-white">
+<header class="hidden md:block sticky top-0 z-50">
+    <section class="flex items-center justify-center h-20 bg-background border-b border-b-white">
         <Container>
             <nav class="flex justify-between items-center">
                 <a href="/">
