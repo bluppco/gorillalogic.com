@@ -1,0 +1,30 @@
+---
+// IMPORT ASTRO ATOMS
+import Video from "../../../atoms/Video.astro"
+
+const {
+
+    src,
+    alt,
+    title,
+    video_src
+
+} = Astro.props
+---
+<div class="bg-zinc-400 relative">
+    <div class="w-full aspect-[2/3]">
+        <Video cy="locations-video">
+            <source src={ video_src } type="video/mp4"/>
+        </Video>
+    </div>
+    <div class="absolute bottom-4 flex gap-4 items-center justify-center w-full">
+        <div class="w-10 aspect-video bg-zinc-200">
+            <img
+                src={ src }
+                alt={ alt }
+                class="w-full h-full"
+            />
+        </div>
+        <span class="text-white uppercase font-open_sans font-semibold">{ title }</span>
+    </div>
+</div>
