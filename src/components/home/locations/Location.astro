@@ -8,17 +8,17 @@ const {
     alt,
     title,
     video_src,
-    top_position
+    bottom_position
 
 } = Astro.props
 ---
-<div class={` ${ top_position ? "mt-16" : "" } relative`}>
+<div class={` ${ bottom_position ? "mt-16" : "" } relative`}>
     <div class="w-full aspect-[2/3]">
         <Video cy="locations-video">
             <source src={ video_src } type="video/mp4"/>
         </Video>
     </div>
-    <div class={` ${ top_position ? "bottom-6" : "bottom-[88px]" } absolute flex gap-4 items-center justify-center w-full`}>
+    <div class={` ${ bottom_position ? "bottom-6" : "bottom-[88px]" } absolute flex gap-4 items-center justify-center w-full`}>
         <div class="w-14 aspect-video bg-zinc-200">
             <img
                 src={ src }
