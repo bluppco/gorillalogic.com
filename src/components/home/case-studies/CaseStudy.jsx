@@ -1,3 +1,6 @@
+import { useEffect, useRef } from "react"
+import { useInView, useAnimation, motion } from "framer-motion"
+
 // IMPORT JSX ATOMS
 import H3 from "../../../atoms/jsx/H3"
 import Paragraph from "../../../atoms/jsx/Paragraph"
@@ -11,12 +14,34 @@ const CaseStudy = ( props ) => {
         alt,
         title,
         description,
-        anchor_text
+        anchor_text,
+        top_padding
 
     } = props
 
+    const ref = useRef()
+    const isInView = useInView( ref )
+    const controls = useAnimation()
+
+    useEffect( () => {
+
+        if( isInView ){
+
+            controls.start("visible")
+
+        }
+
+
+    }, [ isInView ])
+    const slidingVariant = {
+
+        visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+        hidden: { opacity: 0, y: 200 }
+
+    }
+
     return(
-        <div className="space-y-6">
+        <div className={` ${ top_padding ? "mt-32" : "" } space-y-6`}>
             <div className="w-full aspect-[3/2] bg-zinc-200">
                 <img
                     src={ src }
@@ -24,8 +49,15 @@ const CaseStudy = ( props ) => {
                     className="h-full w-full"
                 />
             </div>
-            <H3>{ title }</H3>
-            <Paragraph>{ description }</Paragraph>
+            <motion.div
+                className="space-y-6" ref={ ref }
+                initial="hidden"
+                variants={ slidingVariant }
+                animate={ controls }
+            >
+                <H3>{ title }</H3>
+                <Paragraph>{ description }</Paragraph>
+            </motion.div>
             <ArrowAnchor>{ anchor_text }</ArrowAnchor>
         </div>
     )
