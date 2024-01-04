@@ -10,13 +10,13 @@ const ServicesAndNearShoring = () => {
 
 	const ref = useRef()
     const isInView = useInView( ref )
-    const controls = useAnimation();
+    const controls = useAnimation()
 
     useEffect( () => {
 
         if( isInView ){
 
-            controls.start("visible");
+            controls.start("visible")
 
         }
 
@@ -27,7 +27,7 @@ const ServicesAndNearShoring = () => {
         visible: { opacity: 1, y: 0, transition: { duration: 1 } },
         hidden: { opacity: 0, y: 200 }
 
-    };
+    }
 
 	return(
 		<section className="py-20" ref={ ref }>

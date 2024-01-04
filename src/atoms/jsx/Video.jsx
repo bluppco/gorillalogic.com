@@ -9,7 +9,7 @@ const VideoJSX = ( props ) => {
             muted={ true }
             playsinline={ true }
             preload="auto"
-            class="h-full w-full object-cover"
+            className="h-full w-full object-cover"
             data-cy={ cy }
         >
             { props.children }
