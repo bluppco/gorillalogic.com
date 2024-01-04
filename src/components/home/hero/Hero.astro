@@ -10,27 +10,29 @@ import HeroDescription from "./HeroDescription"
 ---
 <section class="bg-background py-20">
     <Container>
-        <section class="grid grid-cols-3 gap-10">
-            <div class="col-span-2">
-                <H1>We build the technology that tells your story.</H1>
-                <HeroDescription client:load />
-            </div>
-            <div class="flex relative">
-                <div class="w-48 h-72 bg-zinc-200 z-10">
-                    <img
-                        src=""
-                        alt=""
-                        class="w-full h-full object-cover"
-                    />
+        <section>
+            <div class="grid grid-cols-3 gap-10">
+                <div class="col-span-2">
+                    <h1 class="text-white text-8xl font-lora">We build the technology that tells <span class="text-gl_sky_blue italic">your story</span>.</h1>
                 </div>
-                <div class="size-48 bg-zinc-200 absolute top-4 right-20">
-                    <img
-                        src=""
-                        alt=""
-                        class="w-full h-full object-cover"
-                    />
+                <div class="flex relative">
+                    <div class="w-48 h-72 bg-zinc-200 z-10">
+                        <img
+                            src=""
+                            alt=""
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                    <div class="size-48 bg-zinc-200 absolute top-4 right-20">
+                        <img
+                            src=""
+                            alt=""
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
                 </div>
             </div>
+            <HeroDescription client:load />
         </section>
     </Container>
 </section>

@@ -16,7 +16,7 @@ const HeroDescription = () => {
                 wrapper="span"
                 cursor={ true }
                 repeat={ Infinity }
-                className="text-white font-open_sans text-2xl"
+                className="text-white font-open_sans font-light text-2xl"
             />
         </div>
 )
