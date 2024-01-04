@@ -19,6 +19,8 @@ export default {
 				"body": "#225FC9",
 				"background": "#1F1D1D",
 				"gl_blue": "#225fc9",
+				"gl_light_blue": "#3b82f680",
+				"gl_sky_blue": "#79bcfc",
 			}
 		},
 	},
