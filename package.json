@@ -7,7 +7,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "cypress-open": "cypress open",
+    "cypress-run": "cypress run"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^8.0.0",
@@ -17,6 +19,7 @@
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
     "astro": "^4.0.7",
+    "cypress": "^13.6.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-type-animation": "^3.2.0",
