@@ -31,8 +31,8 @@ const ServicesAndNearShoring = () => {
 
 	return(
 		<section className="py-20" ref={ ref }>
-			<section className="grid grid-cols-5 gap-10">
-				<section className="col-span-2 space-y-20">
+			<section className="grid md:grid-cols-5 gap-10">
+				<section className="md:col-span-2 space-y-20">
 				<motion.div
 					initial="hidden"
 					variants={ slidingVariant }
@@ -61,22 +61,22 @@ const ServicesAndNearShoring = () => {
 					variants={ slidingVariant }
 					animate={ controls }
 				>
-					<section className="col-span-3 flex flex-col gap-20 relative pl-20">
-						<div className="w-72 aspect-[3/4] bg-zinc-200 absolute top-0 left-80">
+					<section className="col-span-3 flex flex-col gap-20 relative pl-12 md:pl-20">
+						<div className="w-48 md:w-72 aspect-[3/4] bg-zinc-200 absolute top-0 left-36 md:left-80">
 							<img
 								src=""
 								alt=""
 								className="w-full h-full"
 							/>
 						</div>
-						<div className="w-72 aspect-[3/4] bg-zinc-300 z-10 my-52">
+						<div className="w-48 md:w-72 aspect-[3/4] bg-zinc-300 z-10 my-36 md:my-52">
 							<img
 								src=""
 								alt=""
 								className="w-full h-full"
 							/>
 						</div>
-						<div className="w-72 aspect-[3/4] bg-zinc-400 z-20 absolute top-[480px] left-80">
+						<div className="w-48 md:w-72 aspect-[3/4] bg-zinc-400 z-20 absolute top-80 left-36 md:left-80">
 							<img
 								src=""
 								alt=""

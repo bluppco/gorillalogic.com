@@ -41,7 +41,7 @@ const CaseStudy = ( props ) => {
     }
 
     return(
-        <div className={` ${ top_padding ? "mt-32" : "" } space-y-6`}>
+        <div className={` ${ top_padding ? "md:mt-32" : "" } space-y-6`}>
             <div className="w-full aspect-[3/2] bg-zinc-200">
                 <img
                     src={ src }

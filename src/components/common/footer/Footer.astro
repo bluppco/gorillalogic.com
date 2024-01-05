@@ -33,7 +33,7 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
                 />
             </div>
             <div class="grid grid-cols-1 md:grid-cols-6 gap-10">
-                <div class="flex flex-col items-center md:items-start col-span-2">
+                <div class="flex flex-col col-span-2">
                     <div class="pb-2">
                         <p class="font-open_sans font-semibold text-white text-xs uppercase tracking-widest">{ footerColumnOne.title }</p>
                     </div>
@@ -44,7 +44,7 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
                             return (
                                 <div class="flex items-center gap-4">
                                     <ul class="py-1">
-                                        <li class="text-white font-lora text-4xl">
+                                        <li class="text-white font-lora text-3xl md:text-4xl">
                                             { item.data.title }
                                         </li>
                                     </ul>
@@ -55,7 +55,7 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
 
                     }
                 </div>
-                <div class="flex flex-col items-center md:items-start">
+                <div class="flex flex-col">
                     <div class="pb-2">
                         <p class="font-open_sans font-semibold text-white text-xs uppercase tracking-widest">{ footerColumnTwo.title }</p>
                     </div>
@@ -66,7 +66,7 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
                             return (
                                 <div class="flex items-center gap-4">
                                     <ul class="py-1">
-                                        <li class="text-white hover:text-gl_sky_blue text-xl font-open_sans font-light">
+                                        <li class="text-white hover:text-gl_sky_blue md:text-xl font-open_sans font-light">
                                             <a href={ item.data.link }>
                                                 { item.data.title }
                                             </a>
@@ -79,7 +79,7 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
 
                     }
                 </div>
-                <div class="flex flex-col items-center md:items-start pt-8">
+                <div class="flex flex-col pt-8">
                     {
 
                         footer_column_three.map( ( item ) => {
@@ -87,7 +87,7 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
                             return (
                                 <div class="flex items-center gap-4">
                                     <ul class="py-1">
-                                        <li class="text-white hover:text-gl_sky_blue text-xl font-open_sans font-light">
+                                        <li class="text-white hover:text-gl_sky_blue md:text-xl font-open_sans font-light">
                                             <a href={ item.data.link }>
                                                 <p>{ item.data.title }</p>
                                             </a>
@@ -121,14 +121,16 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
                 </div>
             </div>
         </section>
-        <section class="flex items-center justify-between py-10">
-            <div class="flex gap-10">
+        <section class="flex flex-col md:flex-row md:items-center justify-between py-10">
+            <div class="flex flex-col md:flex-row gap-2 md:gap-10">
                 <div class="flex gap-4">
                     <p class="text-white">&copy; { new Date().getFullYear() } Gorilla Logic LLC</p>
-                    <p class="text-white">HQ Address: 8001 Arista Pl, Ste 600, Broomfield, CO 80021</p>
+                    <p class="text-white hidden md:block">HQ Address: 8001 Arista Pl, Ste 600, Broomfield, CO 80021</p>
                 </div>
-                <p class="text-white hover:text-gl_sky_blue underline underline-offset-4">Cookie Policy</p>
-                <p class="text-white hover:text-gl_sky_blue underline underline-offset-4">Privacy Policy</p>
+                <div class="flex gap-4">
+                    <p class="text-white hover:text-gl_sky_blue underline underline-offset-4">Cookie Policy</p>
+                    <p class="text-white hover:text-gl_sky_blue underline underline-offset-4">Privacy Policy</p>
+                </div>
             </div>
             <!-- SOCIAL ICONS -->
             <SocialIcons />

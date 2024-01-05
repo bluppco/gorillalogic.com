@@ -20,15 +20,15 @@ const Location = ( props ) => {
                     <source src={ video_src } type="video/mp4"/>
                 </Video>
             </div>
-            <div className={` ${ bottom_position ? "bottom-6" : "bottom-[88px]" } absolute flex gap-4 items-center justify-center w-full`}>
-                <div className="w-14 aspect-video bg-zinc-200">
+            <div className={` ${ bottom_position ? "bottom-6" : "bottom-[88px]" } md:absolute flex gap-4 items-center justify-center w-full pt-2 md:pt-0`}>
+                <div className="w-6 md:w-14 aspect-video bg-zinc-200">
                     <img
                         src={ src }
                         alt={ alt }
                         className="w-full h-full"
                     />
                 </div>
-                <span className="text-white uppercase font-open_sans font-semibold">{ title }</span>
+                <span className="text-black md:text-white uppercase font-open_sans font-semibold text-sm md:text-base">{ title }</span>
             </div>
         </div>
 

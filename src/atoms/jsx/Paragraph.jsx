@@ -1,7 +1,7 @@
 const ParagraphJSX = ( props ) => {
 
     return(
-        <p className="font-open_sans text-xl leading-relaxed">{ props.children }</p>
+        <p className="font-open_sans md:text-xl leading-relaxed">{ props.children }</p>
     )
 
 }

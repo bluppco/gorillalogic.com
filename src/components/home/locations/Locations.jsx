@@ -42,7 +42,7 @@ const Locations = ( props ) => {
             variants={ slidingVariant }
             animate={ controls }
         >
-            <section className="grid grid-cols-4 pb-32 pt-10" ref={ ref }>
+            <section className="grid grid-cols-2 md:grid-cols-4 pb-20 md:pb-32 pt-10" ref={ ref }>
                 {
 
                     data.map( ( item, index ) => {
