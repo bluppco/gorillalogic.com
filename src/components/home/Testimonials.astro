@@ -2,7 +2,7 @@
 const data = Array(4).fill({
 
     title: "[Gorilla Logic] has enabled the customer side of our business to really accelerate.",
-    src: "",
+    src: "/finish_line_logo.svg",
     alt: ""
 
 })
@@ -15,13 +15,13 @@ const data = Array(4).fill({
                 data.map( ( item ) => {
 
                     return (
-                        <div class="flex gap-4 items-center border-r border-black px-14 py-4">
+                        <div class="flex gap-8 items-center border-r border-black px-14 py-4">
                             <p class="md:text-xl text-black select-none font-open_sans font-semibold">{ item.title }</p>
-                            <div>
+                            <div class="w-28 aspect-video">
                                 <img
                                     src={ item.src }
                                     alt={ item.alt }
-                                    class="size-10"
+                                    class="w-28 aspect-video"
                                 />
                             </div>
                         </div>
@@ -38,13 +38,13 @@ const data = Array(4).fill({
                 data.map( ( item ) => {
 
                     return (
-                        <div class="flex gap-4 items-center border-r border-black px-14 py-4">
+                        <div class="flex gap-8 items-center border-r border-black px-14 py-4">
                             <p class="md:text-xl text-black select-none font-open_sans font-semibold">{ item.title }</p>
-                            <div>
+                            <div class="w-28 aspect-video">
                                 <img
                                     src={ item.src }
                                     alt={ item.alt }
-                                    class="size-10"
+                                    class="w-28 aspect-video"
                                 />
                             </div>
                         </div>
