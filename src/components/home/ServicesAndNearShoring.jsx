@@ -70,26 +70,31 @@ const ServicesAndNearShoring = ( props ) => {
 					initial="hidden"
 					variants={ slidingVariant }
 					animate={ controls }
+					className="col-span-3 flex flex-col gap-20"
 				>
-					<section className="col-span-3 flex flex-col gap-20 relative pl-12 md:pl-20">
+					<section className=" relative pl-12 md:pl-20">
 						{
 
 							services.images.map( ( value, index ) => {
 
-								let position
+								let position = "";
 
 								if ( index === 0 ) {
-									position = "absolute top-0 left-36 md:left-80"
-								}
-								else if ( index === 1 ) {
-									position = "z-10 my-36 md:my-52"
-								}
-								else {
-									position = "z-20 absolute top-80 md:top-[500px] left-36 md:left-80"
+
+									position = "absolute top-0 left-36 md:left-80 z-10"
+
+								} else if ( index === 1 ) {
+
+									position = "my-36 md:my-52 z-20 absolute"
+
+								} else {
+
+									position = "z-30 absolute top-80 md:top-[500px] left-36 md:left-80"
+
 								}
 
 								return(
-									<div className={"w-48 md:w-72 aspect-[3/4] bg-zinc-200" + position } key={ "services-and-nearshoring-" + index }>
+									<div className={"w-48 md:w-72 aspect-[3/4] bg-zinc-200 " + position } key={ "services-and-nearshoring-" + index }>
 										<img
 											src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
 											alt=""
