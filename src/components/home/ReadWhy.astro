@@ -1,9 +1,12 @@
 ---
-import H2 from "../../atoms/H2.astro"
+// IMPORT ASTRO ATOMS
+import H3 from "../../atoms/H3.astro"
+
+const { data } = Astro.props
 ---
-<section class="flex gap-20">
-    <H2>Read why partnering with Gorilla Logic is unlike any other outsourcing experience.</H2>
-    <button class="bg-gl_blue rounded-full p-4">
+<section class="flex flex-col md:flex-row gap-8 md:gap-20 py-16 border-t border-t-black">
+    <H3>{ data.title }</H3>
+    <button class="bg-gl_blue hover:bg-gl_blue/60 rounded-full p-4 w-fit">
         <div class="size-12">
             <img
                 src="/icons/white_right_arrow.svg"

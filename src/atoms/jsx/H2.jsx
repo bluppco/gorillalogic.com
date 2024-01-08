@@ -1,7 +1,7 @@
 const H2JSX = ( props ) => {
 
     return(
-        <h2 class="text-5xl font-lora">
+        <h2 className="text-4xl md:text-5xl font-lora leading-snug">
             { props.children }
         </h2>
 

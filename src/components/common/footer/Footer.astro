@@ -22,7 +22,7 @@ footer_column_three = footer_column_three.filter( ( item ) => item.data.live )
 import { frontmatter as footerColumnOne } from "../../../content/footer-titles/title-one.md"
 import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/title-two.md"
 ---
-<footer class="bg-black z-30 relative">
+<footer class="bg-background z-30 relative">
     <Container>
         <section class="py-20 border-b border-white">
             <div class="w-40 aspect-video pb-10">
@@ -33,9 +33,9 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
                 />
             </div>
             <div class="grid grid-cols-1 md:grid-cols-6 gap-10">
-                <div class="flex flex-col items-center md:items-start col-span-2">
+                <div class="flex flex-col col-span-2">
                     <div class="pb-2">
-                        <p class="uppercase text-white/60">{ footerColumnOne.title }</p>
+                        <p class="font-open_sans font-semibold text-white text-xs uppercase tracking-widest">{ footerColumnOne.title }</p>
                     </div>
                     {
 
@@ -44,9 +44,8 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
                             return (
                                 <div class="flex items-center gap-4">
                                     <ul class="py-1">
-                                        <li class="text-white text-4xl group">
-                                            <p>{ item.data.title }</p>
-                                            <div class="w-0 bg-white group-hover:w-full h-[1px] transition-width duration-200 ease-in"></div>
+                                        <li class="text-white font-lora text-3xl md:text-4xl">
+                                            { item.data.title }
                                         </li>
                                     </ul>
                                 </div>
@@ -56,9 +55,9 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
 
                     }
                 </div>
-                <div class="flex flex-col items-center md:items-start">
+                <div class="flex flex-col">
                     <div class="pb-2">
-                        <p class="uppercase text-white/60">{ footerColumnTwo.title }</p>
+                        <p class="font-open_sans font-semibold text-white text-xs uppercase tracking-widest">{ footerColumnTwo.title }</p>
                     </div>
                     {
 
@@ -67,11 +66,10 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
                             return (
                                 <div class="flex items-center gap-4">
                                     <ul class="py-1">
-                                        <li class="text-white text-lg group">
+                                        <li class="text-white hover:text-gl_sky_blue md:text-xl font-open_sans font-light">
                                             <a href={ item.data.link }>
-                                                <p>{ item.data.title }</p>
+                                                { item.data.title }
                                             </a>
-                                            <div class="w-0 bg-white group-hover:w-full h-[1px] transition-width duration-200 ease-in"></div>
                                         </li>
                                     </ul>
                                 </div>
@@ -81,7 +79,7 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
 
                     }
                 </div>
-                <div class="flex flex-col items-center md:items-start pt-8">
+                <div class="flex flex-col pt-8">
                     {
 
                         footer_column_three.map( ( item ) => {
@@ -89,11 +87,10 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
                             return (
                                 <div class="flex items-center gap-4">
                                     <ul class="py-1">
-                                        <li class="text-white text-lg group">
+                                        <li class="text-white hover:text-gl_sky_blue md:text-xl font-open_sans font-light">
                                             <a href={ item.data.link }>
                                                 <p>{ item.data.title }</p>
                                             </a>
-                                            <div class="w-0 bg-white group-hover:w-full h-[1px] transition-width duration-200 ease-in"></div>
                                         </li>
                                     </ul>
                                 </div>
@@ -103,19 +100,37 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
 
                     }
                 </div>
-                <div>
-                    <button class="text-white">Contact Us</button>
+                <div class="col-span-2">
+                    <button class="bg-gl_blue hover:bg-gl_sky_blue h-16 px-6 rounded-full text-white hover:text-black text-lg font-open_sans flex gap-4 justify-center items-center group">
+                        Contact Us
+                        <div class="border rounded-full p-3 group-hover:hidden">
+                            <img
+                                src="/icons/white_right_arrow.svg"
+                                alt=""
+                                class="size-4"
+                            />
+                        </div>
+                        <div class="border rounded-full p-3 hidden group-hover:border-black group-hover:block">
+                            <img
+                                src="/icons/black_right_arrow.svg"
+                                alt=""
+                                class="size-4"
+                            />
+                        </div>
+                    </button>
                 </div>
             </div>
         </section>
-        <section class="flex items-center justify-between py-10">
-            <div class="flex gap-10">
+        <section class="flex flex-col md:flex-row md:items-center justify-between py-10">
+            <div class="flex flex-col md:flex-row gap-2 md:gap-10">
                 <div class="flex gap-4">
-                    <p class="text-white">© 2023 Gorilla Logic LLC.</p>
-                    <p class="text-white">HQ Address: 8001 Arista Pl, Ste 600, Broomfield, CO 80021</p>
+                    <p class="text-white">&copy; { new Date().getFullYear() } Gorilla Logic LLC</p>
+                    <p class="text-white hidden md:block">HQ Address: 8001 Arista Pl, Ste 600, Broomfield, CO 80021</p>
                 </div>
-                <p class="text-white underline underline-offset-4">Privacy Policy</p>
-                <p class="text-white underline underline-offset-4">Cookie Policy</p>
+                <div class="flex gap-4">
+                    <p class="text-white hover:text-gl_sky_blue underline underline-offset-4">Cookie Policy</p>
+                    <p class="text-white hover:text-gl_sky_blue underline underline-offset-4">Privacy Policy</p>
+                </div>
             </div>
             <!-- SOCIAL ICONS -->
             <SocialIcons />

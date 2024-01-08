@@ -3,7 +3,7 @@ import { TypeAnimation } from "react-type-animation"
 const HeroDescription = () => {
 
     return (
-        <div className="pt-4 md:pt-10">
+        <div className="mt-10">
             <TypeAnimation
                 sequence={[
                     'Strategic Design: taking the guesswork out of your digital product build.',
@@ -16,7 +16,7 @@ const HeroDescription = () => {
                 wrapper="span"
                 cursor={ true }
                 repeat={ Infinity }
-                className="text-white font-open_sans text-2xl"
+                className="text-white font-open_sans font-light text-xl md:text-2xl"
             />
         </div>
 )
