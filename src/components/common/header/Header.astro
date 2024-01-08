@@ -5,6 +5,9 @@ import Container from "../../../layouts/Container.astro"
 // IMPORT ASTRO ATOMS
 import RoundedButton from "../../../atoms/RoundedButton.astro"
 
+// IMPORT JSX ATOMS
+import MobileHeader from "./MobileHeader"
+
 // IMPORT COLLECTION FROM CONTENT
 import { getCollection } from "astro:content"
 
@@ -126,3 +129,4 @@ header_data = header_data.sort((a, b) => a.data.order - b.data.order)
         </Container>
     </section>
 </header>
+<MobileHeader client:load />
