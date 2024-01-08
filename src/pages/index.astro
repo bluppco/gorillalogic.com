@@ -53,8 +53,14 @@ import ReadWhy from "../components/home/ReadWhy.astro"
 import ServicesAndNearShoring from "../components/home/ServicesAndNearShoring"
 import Testimonials from "../components/home/Testimonials.astro"
 
+// IMPORT CONSTANTS
+import { CDN_LINK } from "../constants/cdn"
 ---
-<Layout>
+<Layout
+	title={ meta_tags.title }
+	description={ meta_tags.description }
+	image={ CDN_LINK + meta_tags.cover }
+>
 	<HeaderBanner />
 	<Header />
 	<Hero data={ hero } />
