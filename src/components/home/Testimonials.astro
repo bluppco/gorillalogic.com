@@ -1,0 +1,59 @@
+---
+const data = Array(4).fill({
+
+    title: "[Gorilla Logic] has enabled the customer side of our business to really accelerate.",
+    src: "/finish_line_logo.svg",
+    alt: ""
+
+})
+---
+<section class="bg-gl_sky_blue">
+    <div class="relative flex overflow-x-hidden">
+        <div class="flex items-center animate-marquee whitespace-nowrap">
+            {
+
+                data.map( ( item ) => {
+
+                    return (
+                        <div class="flex gap-8 items-center border-r border-black px-14 py-2">
+                            <p class="md:text-xl text-black select-none font-open_sans font-semibold">{ item.title }</p>
+                            <div class="w-28 aspect-video">
+                                <img
+                                    src={ item.src }
+                                    alt={ item.alt }
+                                    class="w-28 aspect-video"
+                                />
+                            </div>
+                        </div>
+
+                    )
+
+                })
+
+            }
+        </div>
+        <div class="flex items-center absolute top-0 animate-marquee2 whitespace-nowrap">
+            {
+
+                data.map( ( item ) => {
+
+                    return (
+                        <div class="flex gap-8 items-center border-r border-black px-14 py-2">
+                            <p class="md:text-xl text-black select-none font-open_sans font-semibold">{ item.title }</p>
+                            <div class="w-28 aspect-video">
+                                <img
+                                    src={ item.src }
+                                    alt={ item.alt }
+                                    class="w-28 aspect-video"
+                                />
+                            </div>
+                        </div>
+
+                    )
+
+                })
+
+            }
+        </div>
+    </div>
+</section>
