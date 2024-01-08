@@ -1,6 +1,6 @@
 # Gorilla Logic
 
-Link - gorillalogic.com
+Link - https://gorillalogic.com
 
 ### Fonts
 - Open Sans - Google Fonts
