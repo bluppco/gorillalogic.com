@@ -7,6 +7,8 @@ import OpenSansH3 from "../../../atoms/OpenSansH3.astro"
 // IMPORT ASTRO COMPONENTS
 import Blog from "./Blog.astro"
 
+const { insights } = Astro.props
+
 const data = Array(3).fill({
 
 	title: "How Design Thinking Shapes Business Strategy",
@@ -17,8 +19,8 @@ const data = Array(3).fill({
 ---
 <section class="py-20">
 	<div>
-		<OpenSansH3>Talking latest trends</OpenSansH3>
-		<H2>Technology & design insights</H2>
+		<OpenSansH3>{ insights.title }</OpenSansH3>
+		<H2>{ insights.sub_title }</H2>
 	</div>
 	<div class="grid md:grid-cols-3 gap-8 py-14">
 		{

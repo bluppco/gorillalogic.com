@@ -15,6 +15,8 @@ import CaseStudy from "./CaseStudy"
 
 const CaseStudies = ( props ) => {
 
+    const { case_study } = props
+
     const ref = useRef()
     const isInView = useInView( ref )
     const controls = useAnimation()
@@ -56,9 +58,9 @@ const CaseStudies = ( props ) => {
                         animate={ controls }
                     >
                         <div className="md:space-y-6" ref={ ref }>
-                            <OpenSansH3JSX>Case Studies</OpenSansH3JSX>
-                            <H2JSX>Gorilla Logic in action</H2JSX>
-                            <ParagraphJSX>For more than 20 years, we’ve partnered with hundreds of leading Fortune 500 and SMB companies across industries to build their business-critical software applications.</ParagraphJSX>
+                            <OpenSansH3JSX>{ case_study.title }</OpenSansH3JSX>
+                            <H2JSX>{ case_study.sub_title }</H2JSX>
+                            <ParagraphJSX>{ case_study.description }</ParagraphJSX>
                         </div>
                     </motion.div>
                     <div className="grid md:grid-cols-2 gap-4 md:gap-24 py-10">
