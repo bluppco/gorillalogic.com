@@ -6,7 +6,7 @@ const { data } = Astro.props
 ---
 <section class="bg-gl_sky_blue">
     <div class="relative flex overflow-x-hidden">
-        <div class="flex items-center animate-marquee hover:animate-pause_marquee whitespace-nowrap">
+        <div class="flex items-center animate-marquee hover:[animation-play-state:paused] whitespace-nowrap">
             {
 
                 data.map( ( value ) => {

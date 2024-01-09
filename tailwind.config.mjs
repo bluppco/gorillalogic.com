@@ -49,10 +49,9 @@ export default {
 
 			animation: {
 				marquee: 'marquee 40s linear infinite',
-				pause_marquee: 'animation-play-state: paused',
 				marquee2: 'marquee2 40s linear infinite',
-				sliding: 'sliding 10s',
-				slow_sliding: 'slow_sliding 11s',
+				sliding: 'sliding 10s infinite',
+				slow_sliding: 'slow_sliding 11s infinite',
 			},
 
 			keyframes: {
