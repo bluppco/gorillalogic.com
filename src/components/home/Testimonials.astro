@@ -1,26 +1,23 @@
 ---
-const data = Array(4).fill({
+// IMPORT CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "../../constants/cdn"
 
-    title: "[Gorilla Logic] has enabled the customer side of our business to really accelerate.",
-    src: "/finish_line_logo.svg",
-    alt: ""
-
-})
+const { data } = Astro.props
 ---
 <section class="bg-gl_sky_blue">
     <div class="relative flex overflow-x-hidden">
-        <div class="flex items-center animate-marquee whitespace-nowrap">
+        <div class="flex items-center animate-marquee hover:[animation-play-state:paused] whitespace-nowrap">
             {
 
-                data.map( ( item ) => {
+                data.map( ( value ) => {
 
                     return (
                         <div class="flex gap-8 items-center border-r border-black px-14 py-2">
-                            <p class="md:text-xl text-black select-none font-open_sans font-semibold">{ item.title }</p>
+                            <p class="md:text-xl text-black select-none font-open_sans font-semibold">{ value.title }</p>
                             <div class="w-28 aspect-video">
                                 <img
-                                    src={ item.src }
-                                    alt={ item.alt }
+                                    src={ CDN_LINK + value.cover + "?quality=" + IMAGE_QUALITY }
+                                    alt={ value.title }
                                     class="w-28 aspect-video"
                                 />
                             </div>
@@ -35,15 +32,15 @@ const data = Array(4).fill({
         <div class="flex items-center absolute top-0 animate-marquee2 whitespace-nowrap">
             {
 
-                data.map( ( item ) => {
+                data.map( ( value ) => {
 
                     return (
                         <div class="flex gap-8 items-center border-r border-black px-14 py-2">
-                            <p class="md:text-xl text-black select-none font-open_sans font-semibold">{ item.title }</p>
+                            <p class="md:text-xl text-black select-none font-open_sans font-semibold">{ value.title }</p>
                             <div class="w-28 aspect-video">
                                 <img
-                                    src={ item.src }
-                                    alt={ item.alt }
+                                    src={ CDN_LINK + value.cover + "?quality=" + IMAGE_QUALITY }
+                                    alt={ value.title }
                                     class="w-28 aspect-video"
                                 />
                             </div>

@@ -5,9 +5,9 @@ const VideoJSX = ( props ) => {
     return(
         <video
             loop={ true }
-            autoplay={ false }
+            autoPlay={ true }
             muted={ true }
-            playsinline={ true }
+            playsInline={ true }
             preload="auto"
             className="h-full w-full object-cover"
             data-cy={ cy }

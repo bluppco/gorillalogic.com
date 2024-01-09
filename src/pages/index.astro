@@ -8,7 +8,7 @@ const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
 const network_data = await fetch( endpoint + "/home" )
 const data_json = await network_data.json()
 
-const { home, case_studies, locations, blogs, testimonials, meta_tags } = data_json.data
+const { home, studies, locations, blogs, testimonials, meta_tags } = data_json.data
 
 // HOME PROPS
 let hero = null
@@ -38,7 +38,6 @@ home.map( ( data ) => {
 
 // IMPORT ASTRO LAYOUTS
 import Layout from "../layouts/Layout.astro"
-import Container from "../layouts/Container.astro"
 
 // IMPORT ASTRO COMPONENTS
 import Footer from "../components/common/footer/Footer.astro"
@@ -64,22 +63,25 @@ import { CDN_LINK } from "../constants/cdn"
 	<HeaderBanner />
 	<Header />
 	<Hero data={ hero } />
-	<Container>
-		<ServicesAndNearShoring
-			client:load
-			services={ services }
-			nearshoring={ nearshoring }
-		/>
-		<Locations client:load />
-		<ReadWhy data={ read_why } />
-	</Container>
+	<ServicesAndNearShoring
+		client:load
+		services={ services }
+		nearshoring={ nearshoring }
+	/>
+	<Locations
+		client:load
+		data={ locations }
+	/>
+	<ReadWhy data={ read_why } />
 	<CaseStudies
 		client:load
 		case_study={ case_study }
+		data={ studies }
 	/>
-	<Container>
-		<LatestInsights insights={ latest_insights } />
-	</Container>
-	<Testimonials />
+	<LatestInsights
+		insights={ latest_insights }
+		data={ blogs }
+	/>
+	<Testimonials data={ testimonials } />
 	<Footer />
 </Layout>

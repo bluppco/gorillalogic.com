@@ -1,4 +1,25 @@
 /** @type {import('tailwindcss').Config} */
+
+const plugin = require("tailwindcss/plugin");
+
+const Myclass = plugin(function ({ addUtilities }) {
+
+  addUtilities({
+    ".my-rotate-y-180": {
+      transform: "rotateY(180deg)",
+    },
+    ".preserve-3d": {
+      transformStyle: "preserve-3d",
+    },
+    ".perspective": {
+      perspective: "1000px",
+    },
+    ".backface-hidden": {
+      backfaceVisibility: "hidden",
+    },
+  })
+})
+
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
@@ -28,7 +49,9 @@ export default {
 
 			animation: {
 				marquee: 'marquee 40s linear infinite',
-				marquee2: 'marquee2 40s linear infinite'
+				marquee2: 'marquee2 40s linear infinite',
+				sliding: 'sliding 10s infinite',
+				slow_sliding: 'slow_sliding 11s infinite',
 			},
 
 			keyframes: {
@@ -39,10 +62,34 @@ export default {
 				marquee2: {
 				  	'0%': { transform: 'translateX(100%)' },
 				  	'100%': { transform: 'translateX(0%)' }
-				}
+				},
+				sliding: {
+					'0%': { transform: 'translateY(200%)',  },
+					'50%': { transform: 'translateY(0%)' , animationTimingFunction: 'ease-in-out', animationDelay: '50ms', animationDuration: '4s' },
+					'100%': { transform: 'translateY(-200%)' }
+			  	},
+				slow_sliding: {
+					'0%': { transform: 'translateY(200%)',  },
+					'50%': { transform: 'translateY(0%)' , animationTimingFunction: 'ease-in-out', animationDelay: '50ms', animationDuration: '6s' },
+					'100%': { transform: 'translateY(-200%)' }
+			  	},
 			},
+			flip: {
+				".my-rotate-y-180": {
+					transform: "rotateY(180deg)",
+				  },
+				  ".preserve-3d": {
+					transformStyle: "preserve-3d",
+				  },
+				  ".perspective": {
+					perspective: "1000px",
+				  },
+				  ".backface-hidden": {
+					backfaceVisibility: "hidden",
+				  }
+			}
 
 		},
 	},
-	plugins: [],
+	plugins: [Myclass],
 }
