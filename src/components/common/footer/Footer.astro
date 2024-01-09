@@ -23,8 +23,8 @@ import { frontmatter as footerColumnOne } from "../../../content/footer-titles/t
 import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/title-two.md"
 ---
 <footer class="bg-background z-30 relative">
-    <Container>
-        <section class="py-20 border-b border-white">
+    <section class="py-20 border-b border-white/40">
+        <Container>
             <div class="w-40 aspect-video pb-10">
                 <img
                     src="/logo/gl_logo.svg"
@@ -33,7 +33,7 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
                 />
             </div>
             <div class="grid grid-cols-1 md:grid-cols-6 gap-10">
-                <div class="flex flex-col col-span-2">
+                <div class="flex flex-col col-span-2 pr-10">
                     <div class="pb-2">
                         <p class="font-open_sans font-semibold text-white text-xs uppercase tracking-widest">{ footerColumnOne.title }</p>
                     </div>
@@ -100,7 +100,7 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
 
                     }
                 </div>
-                <div class="col-span-2">
+                <div class="col-span-2 pt-10">
                     <button class="bg-gl_blue hover:bg-gl_sky_blue h-16 px-6 rounded-full text-white hover:text-black text-lg font-open_sans flex gap-4 justify-center items-center group">
                         Contact Us
                         <div class="border rounded-full p-3 group-hover:hidden">
@@ -118,10 +118,19 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
                             />
                         </div>
                     </button>
+                    <div class="flex justify-end absolute bottom-[97px] right-0 size-72">
+                        <img
+                            src="/images/gorilla_footer.svg"
+                            alt=""
+                            class="w-full h-full"
+                        />
+                    </div>
                 </div>
             </div>
-        </section>
-        <section class="flex flex-col md:flex-row md:items-center justify-between py-10">
+        </Container>
+    </section>
+    <Container>
+        <section class="flex flex-col md:flex-row md:items-center justify-between h-24">
             <div class="flex flex-col md:flex-row gap-2 md:gap-10">
                 <div class="flex gap-4">
                     <p class="text-white">&copy; { new Date().getFullYear() } Gorilla Logic LLC</p>
@@ -129,7 +138,7 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
                 </div>
                 <div class="flex gap-4">
                     <p class="text-white hover:text-gl_sky_blue underline underline-offset-4 hover:cursor-pointer">Cookie Policy</p>
-                    <p class="text-white hover:text-gl_sky_blue underline underline-offset-4 hover:cursor-pointer"">Privacy Policy</p>
+                    <p class="text-white hover:text-gl_sky_blue underline underline-offset-4 hover:cursor-pointer">Privacy Policy</p>
                 </div>
             </div>
             <!-- SOCIAL ICONS -->
