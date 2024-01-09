@@ -50,7 +50,9 @@ export default {
 			animation: {
 				marquee: 'marquee 40s linear infinite',
 				pause_marquee: 'animation-play-state: paused',
-				marquee2: 'marquee2 40s linear infinite'
+				marquee2: 'marquee2 40s linear infinite',
+				sliding: 'sliding 10s',
+				slow_sliding: 'slow_sliding 11s',
 			},
 
 			keyframes: {
@@ -61,7 +63,17 @@ export default {
 				marquee2: {
 				  	'0%': { transform: 'translateX(100%)' },
 				  	'100%': { transform: 'translateX(0%)' }
-				}
+				},
+				sliding: {
+					'0%': { transform: 'translateY(200%)',  },
+					'50%': { transform: 'translateY(0%)' , animationTimingFunction: 'ease-in-out', animationDelay: '50ms', animationDuration: '4s' },
+					'100%': { transform: 'translateY(-200%)' }
+			  	},
+				slow_sliding: {
+					'0%': { transform: 'translateY(200%)',  },
+					'50%': { transform: 'translateY(0%)' , animationTimingFunction: 'ease-in-out', animationDelay: '50ms', animationDuration: '6s' },
+					'100%': { transform: 'translateY(-200%)' }
+			  	},
 			},
 			flip: {
 				".my-rotate-y-180": {

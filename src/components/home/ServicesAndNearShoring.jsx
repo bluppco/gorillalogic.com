@@ -42,8 +42,8 @@ const ServicesAndNearShoring = ( props ) => {
     }
 
 	return(
-		<ContainerJSX>
-			<section className="py-20" ref={ ref }>
+		<section className="py-20 z-10 bg-white relative" ref={ ref }>
+			<ContainerJSX>
 				<section className="grid md:grid-cols-5 gap-10">
 					<section className="md:col-span-2 space-y-20">
 					<motion.div
@@ -65,7 +65,7 @@ const ServicesAndNearShoring = ( props ) => {
 						<div className="space-y-6">
 							<H2JSX>{ nearshoring.title }</H2JSX>
 							<ParagraphJSX>{ nearshoring.description }</ParagraphJSX>
-							{/*<section set:html={ html } className="markdown" />*/}
+							<section set:html={ html } className="markdown" />
 							<ArrowAnchorJSX>Explore nearshoring</ArrowAnchorJSX>
 						</div>
 					</motion.div>
@@ -113,8 +113,8 @@ const ServicesAndNearShoring = ( props ) => {
 						</section>
 					</motion.div>
 				</section>
-			</section>
-		</ContainerJSX>
+			</ContainerJSX>
+		</section>
 
 	)
 

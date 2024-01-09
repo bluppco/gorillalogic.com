@@ -7,32 +7,18 @@ import H1 from "../../../atoms/H1.astro"
 
 // IMPORT ASTRO COMPONENTS
 import HeroDescription from "./HeroDescription"
+import HeroAnimatedImages from "./HeroAnimatedImages.astro"
 
 const { data } = Astro.props
 ---
 <section class="bg-background py-24">
     <Container>
         <section>
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="md:col-span-2">
-                    <h1 class="text-white text-6xl md:text-8xl font-lora">{ data.title }<span class="text-gl_sky_blue italic">your story</span>.</h1>
+            <div class="grid md:grid-cols-5 gap-10">
+                <div class="md:col-span-3">
+                    <h1 class="text-white text-6xl md:text-8xl font-lora">{ data.title }<span class="text-gl_sky_blue italic"> your story</span>.</h1>
                 </div>
-                <div class="relative hidden md:flex">
-                    <div class="w-48 h-72 bg-zinc-200 z-10">
-                        <img
-                            src=""
-                            alt=""
-                            class="w-full h-full object-cover"
-                        />
-                    </div>
-                    <div class="size-48 bg-zinc-200 absolute top-4 right-20">
-                        <img
-                            src=""
-                            alt=""
-                            class="w-full h-full object-cover"
-                        />
-                    </div>
-                </div>
+                <HeroAnimatedImages />
             </div>
             <HeroDescription client:load />
         </section>

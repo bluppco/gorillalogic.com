@@ -63,7 +63,7 @@ const CaseStudy = ( props ) => {
                             <div className="flex gap-2">
                                 <div className="h-8 aspect-video">
                                     <img
-                                        src={ src }
+                                        src="/icons/primary_tech.svg"
                                         alt={ alt }
                                         className="h-8 aspect-video"
                                     />
