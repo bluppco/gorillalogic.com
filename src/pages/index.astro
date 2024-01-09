@@ -64,22 +64,18 @@ import { CDN_LINK } from "../constants/cdn"
 	<HeaderBanner />
 	<Header />
 	<Hero data={ hero } />
-	<Container>
-		<ServicesAndNearShoring
-			client:load
-			services={ services }
-			nearshoring={ nearshoring }
-		/>
-		<Locations client:load />
-		<ReadWhy data={ read_why } />
-	</Container>
+	<ServicesAndNearShoring
+		client:load
+		services={ services }
+		nearshoring={ nearshoring }
+	/>
+	<Locations client:load />
+	<ReadWhy data={ read_why } />
 	<CaseStudies
 		client:load
 		case_study={ case_study }
 	/>
-	<Container>
-		<LatestInsights insights={ latest_insights } />
-	</Container>
+	<LatestInsights insights={ latest_insights } />
 	<Testimonials />
 	<Footer />
 </Layout>
