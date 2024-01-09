@@ -9,6 +9,8 @@ import ContainerJSX from "../../../layouts/jsx/Container.jsx"
 
 const Locations = ( props ) => {
 
+    const { data } = props
+
     const ref = useRef()
     const isInView = useInView( ref )
     const controls = useAnimation()
@@ -30,15 +32,6 @@ const Locations = ( props ) => {
 
     }
 
-    const data = Array(4).fill({
-
-        title: "United States",
-        src: "",
-        alt: "",
-        video_src: "/united_states.mp4"
-
-    })
-
     return(
         <motion.div
             initial="hidden"
@@ -54,10 +47,10 @@ const Locations = ( props ) => {
                             return(
                                 <Location
                                     bottom_position={ index % 2 - 1 }
-                                    src={ item.src }
-                                    alt={ item.alt }
-                                    title={ item.title }
-                                    video_src={ item.video_src }
+                                    src={ item.cover }
+                                    alt={ item.location }
+                                    title={ item.location }
+                                    video_src={ item.video }
                                 />
                             )
 

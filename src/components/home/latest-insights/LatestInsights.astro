@@ -10,15 +10,7 @@ import Container from "../../../layouts/Container.astro"
 // IMPORT ASTRO COMPONENTS
 import Blog from "./Blog.astro"
 
-const { insights } = Astro.props
-
-const data = Array(3).fill({
-
-	title: "How Design Thinking Shapes Business Strategy",
-	src: "",
-	alt: ""
-
-})
+const { insights, data } = Astro.props
 ---
 <Container>
 	<section class="py-20">
@@ -33,8 +25,8 @@ const data = Array(3).fill({
 
 					return(
 						<Blog
-							src={ item.src }
-							alt={ item.alt }
+							src={ item.cover }
+							alt={ item.title }
 							title={ item.title }
 						/>
 					)

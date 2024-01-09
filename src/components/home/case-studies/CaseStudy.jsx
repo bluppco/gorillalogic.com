@@ -6,6 +6,9 @@ import H3 from "../../../atoms/jsx/H3"
 import Paragraph from "../../../atoms/jsx/Paragraph"
 import ArrowAnchor from "../../../atoms/jsx/ArrowAnchor"
 
+// IMPORT CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/cdn"
+
 const CaseStudy = ( props ) => {
 
     const {
@@ -53,7 +56,7 @@ const CaseStudy = ( props ) => {
                 <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-700">
                     <div className="w-full aspect-[3/2] bg-zinc-200 absolute backface-hidden">
                         <img
-                            src={ src }
+                            src={ CDN_LINK + src + "?quality=" + IMAGE_QUALITY }
                             alt={ alt }
                             className="h-full w-full"
                         />
@@ -70,7 +73,7 @@ const CaseStudy = ( props ) => {
                                 </div>
                                 <p className="font-open_sans font-semibold text-xl uppercase tracking-widest">Primary technology</p>
                             </div>
-                            <div className="flex flex-wrap gap-x-8 gap-y-4">
+                            <div className="flex flex-wrap gap-x-8 gap-y-2">
                                 {
 
                                     primary_technology.map( ( value ) => {

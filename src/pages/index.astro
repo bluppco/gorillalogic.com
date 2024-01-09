@@ -8,7 +8,7 @@ const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
 const network_data = await fetch( endpoint + "/home" )
 const data_json = await network_data.json()
 
-const { home, case_studies, locations, blogs, testimonials, meta_tags } = data_json.data
+const { home, studies, locations, blogs, testimonials, meta_tags } = data_json.data
 
 // HOME PROPS
 let hero = null
@@ -68,13 +68,20 @@ import { CDN_LINK } from "../constants/cdn"
 		services={ services }
 		nearshoring={ nearshoring }
 	/>
-	<Locations client:load />
+	<Locations
+		client:load
+		data={ locations }
+	/>
 	<ReadWhy data={ read_why } />
 	<CaseStudies
 		client:load
 		case_study={ case_study }
+		data={ studies }
 	/>
-	<LatestInsights insights={ latest_insights } />
-	<Testimonials />
+	<LatestInsights
+		insights={ latest_insights }
+		data={ blogs }
+	/>
+	<Testimonials data={ testimonials } />
 	<Footer />
 </Layout>

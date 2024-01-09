@@ -15,7 +15,7 @@ import CaseStudy from "./CaseStudy"
 
 const CaseStudies = ( props ) => {
 
-    const { case_study } = props
+    const { case_study, data } = props
 
     const ref = useRef()
     const isInView = useInView( ref )
@@ -37,18 +37,6 @@ const CaseStudies = ( props ) => {
         hidden: { opacity: 0, y: 200 }
 
     }
-
-    const data = Array(2).fill({
-
-        title: "Developing a tool to increase revenue and streamline operations",
-        src: "/finish_line_logo.svg",
-        alt: "",
-        description: "A collaborative partnership to create a faster and easier way for customers to search, find, and price the best satellite images online.",
-        anchor_text: "Explore Maxar",
-        primary_technology: [ "Python", "React/Redux", "Amazon Web Services (AWS)" ]
-
-
-    })
 
     return(
         <section className="py-20 bg-neutral-100">
@@ -73,11 +61,11 @@ const CaseStudies = ( props ) => {
                                 return(
                                     <CaseStudy
                                         top_padding={ index %2 -1 }
-                                        src={ item.src }
-                                        alt={ item.alt }
+                                        src={ item.cover }
+                                        alt={ item.title }
                                         title={ item.title }
                                         description={ item.description }
-                                        anchor_text={ item.anchor_text }
+                                        anchor_text={ item.button_title }
                                         primary_technology={ item.primary_technology }
                                     />
                                 )
