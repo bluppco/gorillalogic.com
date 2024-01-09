@@ -3,6 +3,7 @@
 const plugin = require("tailwindcss/plugin");
 
 const Myclass = plugin(function ({ addUtilities }) {
+
   addUtilities({
     ".my-rotate-y-180": {
       transform: "rotateY(180deg)",
@@ -16,8 +17,8 @@ const Myclass = plugin(function ({ addUtilities }) {
     ".backface-hidden": {
       backfaceVisibility: "hidden",
     },
-  });
-});
+  })
+})
 
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -48,6 +49,7 @@ export default {
 
 			animation: {
 				marquee: 'marquee 40s linear infinite',
+				pause_marquee: 'animation-play-state: paused',
 				marquee2: 'marquee2 40s linear infinite'
 			},
 
