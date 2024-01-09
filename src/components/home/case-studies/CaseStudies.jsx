@@ -41,10 +41,12 @@ const CaseStudies = ( props ) => {
     const data = Array(2).fill({
 
         title: "Developing a tool to increase revenue and streamline operations",
-        src: "",
+        src: "/finish_line_logo.svg",
         alt: "",
         description: "A collaborative partnership to create a faster and easier way for customers to search, find, and price the best satellite images online.",
-        anchor_text: "Explore Maxar"
+        anchor_text: "Explore Maxar",
+        primary_technology: [ "Python", "React/Redux", "Amazon Web Services (AWS)" ]
+
 
     })
 
@@ -76,6 +78,7 @@ const CaseStudies = ( props ) => {
                                         title={ item.title }
                                         description={ item.description }
                                         anchor_text={ item.anchor_text }
+                                        primary_technology={ item.primary_technology }
                                     />
                                 )
 
