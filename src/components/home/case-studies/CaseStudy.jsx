@@ -40,6 +40,12 @@ const CaseStudy = ( props ) => {
         hidden: { opacity: 0, y: 200 }
 
     }
+    const delayedSlidingVariant = {
+
+        visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.1 } },
+        hidden: { opacity: 0, y: 50 }
+
+    }
 
     return(
         <div className={` ${ top_padding ? "md:mt-32" : "" } space-y-6`}>
@@ -92,7 +98,14 @@ const CaseStudy = ( props ) => {
                 <H3>{ title }</H3>
                 <Paragraph>{ description }</Paragraph>
             </motion.div>
-            <ArrowAnchor>{ anchor_text }</ArrowAnchor>
+            <motion.div
+                className="space-y-6" ref={ ref }
+                initial="hidden"
+                variants={ delayedSlidingVariant }
+                animate={ controls }
+            >
+                <ArrowAnchor>{ anchor_text }</ArrowAnchor>
+            </motion.div>
         </div>
     )
 
