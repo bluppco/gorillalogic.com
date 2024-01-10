@@ -12,3 +12,6 @@ Link - https://gorillalogic.com
 - Two : HeadingTwo - font-lora, text-36px, md:text-48px, md:leading-tight
 - Three : HeadingThree - font-lora, text-30px
 - OpenSansThree : HeadingOpenSansThree - font-open_sans, md:text-20px, font-semibold, uppercase, tracking-widest
+
+### Fonts weights to be added
+- Open Sans - weight 100, 300

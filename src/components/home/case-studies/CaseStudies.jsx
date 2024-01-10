@@ -53,7 +53,7 @@ const CaseStudies = ( props ) => {
                             <ParagraphJSX>{ case_study.description }</ParagraphJSX>
                         </div>
                     </motion.div>
-                    <div className="grid md:grid-cols-2 gap-4 md:gap-24 py-10">
+                    <div className="grid md:grid-cols-2 gap-10 md:gap-24 py-10">
                         {
 
                             data.map( ( item, index ) => {

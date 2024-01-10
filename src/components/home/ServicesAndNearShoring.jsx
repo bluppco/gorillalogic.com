@@ -42,7 +42,7 @@ const ServicesAndNearShoring = ( props ) => {
     }
 
 	return(
-		<section className="py-20 z-10 bg-white relative" ref={ ref }>
+		<section className="py-10 md:py-20 z-10 bg-white relative" ref={ ref }>
 			<ContainerJSX>
 				<section className="grid md:grid-cols-5 gap-10">
 					<section className="md:col-span-2 space-y-20">
@@ -74,9 +74,9 @@ const ServicesAndNearShoring = ( props ) => {
 						initial="hidden"
 						variants={ slidingVariant }
 						animate={ controls }
-						className="col-span-3 flex flex-col gap-20"
+						className="md:col-span-3 flex flex-col gap-20"
 					>
-						<section className=" relative pl-12 md:pl-20">
+						<section className="relative pl-12 md:pl-20 h-[600px]">
 							{
 
 								services.images.map( ( value, index ) => {
