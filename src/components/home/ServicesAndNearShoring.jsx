@@ -9,7 +9,7 @@ import ParagraphJSX from "../../atoms/jsx/Paragraph"
 import ArrowAnchorJSX from "../../atoms/jsx/ArrowAnchor"
 
 // IMPORT CONSTANTS
-import { CDN_LINK, IMAGE_QUALITY } from "../../constants/cdn"
+import { CDN_LINK, IMAGE_QUALITY, IMAGE_WIDTH } from "../../constants/cdn"
 
 // IMPORT JSX LAYOUTS
 import ContainerJSX from "../../layouts/jsx/Container"
@@ -100,7 +100,7 @@ const ServicesAndNearShoring = ( props ) => {
 									return(
 										<div className={"w-48 md:w-72 aspect-[3/4] bg-zinc-200 " + position } key={ "services-and-nearshoring-" + index }>
 											<img
-												src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
+												src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY + "&width=" + IMAGE_WIDTH }
 												alt=""
 												className="w-full h-full"
 											/>
