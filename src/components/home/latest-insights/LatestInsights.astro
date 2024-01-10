@@ -1,8 +1,8 @@
 ---
 // IMPORT ASTRO ATOMS
 import Button from "../../../atoms/Button.astro"
-import H2 from "../../../atoms/H2.astro"
-import OpenSansH3 from "../../../atoms/OpenSansH3.astro"
+import OpenSansHeadingThree from "../../../atoms/heading/OpenSansThree.astro"
+import HeadingTwo from "../../../atoms/heading/Two.astro"
 
 // IMPORT ASTRO LAYOUTS
 import Container from "../../../layouts/Container.astro"
@@ -15,8 +15,8 @@ const { insights, data } = Astro.props
 <Container>
 	<section class="py-20">
 		<div>
-			<OpenSansH3>{ insights.title }</OpenSansH3>
-			<H2>{ insights.sub_title }</H2>
+			<OpenSansHeadingThree>{ insights.title }</OpenSansHeadingThree>
+			<HeadingTwo>{ insights.sub_title }</HeadingTwo>
 		</div>
 		<div class="grid md:grid-cols-3 gap-8 py-14">
 			{

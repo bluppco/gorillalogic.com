@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react"
 import { useInView, useAnimation, motion } from "framer-motion"
 
 // IMPORT JSX ATOMS
-import H3 from "../../../atoms/jsx/H3"
+import HeadingThreeJSX from "../../../atoms/heading/jsx/Three"
 import Paragraph from "../../../atoms/jsx/Paragraph"
 import ArrowAnchor from "../../../atoms/jsx/ArrowAnchor"
 
@@ -98,7 +98,7 @@ const CaseStudy = ( props ) => {
                 variants={ slidingVariant }
                 animate={ controls }
             >
-                <H3>{ title }</H3>
+                <HeadingThreeJSX>{ title }</HeadingThreeJSX>
                 <Paragraph>{ description }</Paragraph>
             </motion.div>
             <motion.div

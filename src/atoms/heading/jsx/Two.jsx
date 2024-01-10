@@ -1,4 +1,4 @@
-const H2JSX = ( props ) => {
+const HeadingTwoJSX = ( props ) => {
 
     return(
         <h2 className="text-4xl md:text-5xl font-lora md:!leading-tight">
@@ -9,4 +9,4 @@ const H2JSX = ( props ) => {
 
 }
 
-export default H2JSX
+export default HeadingTwoJSX

@@ -1,4 +1,4 @@
-const H1JSX = ( props ) => {
+const HeadingOneJSX = ( props ) => {
 
     return(
         <h1 class="text-6xl font-lora">
@@ -9,4 +9,4 @@ const H1JSX = ( props ) => {
 
 }
 
-export default H1JSX
+export default HeadingOneJSX

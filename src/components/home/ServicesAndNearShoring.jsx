@@ -4,7 +4,7 @@ import { useInView, useAnimation, motion } from "framer-motion"
 import { marked } from "marked"
 
 // IMPORT JSX ATOMS
-import H2JSX from "../../atoms/jsx/H2"
+import HeadingTwoJSX from "../../atoms/heading/jsx/Two"
 import ParagraphJSX from "../../atoms/jsx/Paragraph"
 import ArrowAnchorJSX from "../../atoms/jsx/ArrowAnchor"
 
@@ -52,7 +52,7 @@ const ServicesAndNearShoring = ( props ) => {
 						animate={ controls }
 					>
 						<div className="space-y-6">
-							<H2JSX>{ services.title }</H2JSX>
+							<HeadingTwoJSX>{ services.title }</HeadingTwoJSX>
 							<ParagraphJSX>{ services.description }</ParagraphJSX>
 							<ArrowAnchorJSX>See our services</ArrowAnchorJSX>
 						</div>
@@ -63,7 +63,7 @@ const ServicesAndNearShoring = ( props ) => {
 						animate={ controls }
 					>
 						<div className="space-y-6">
-							<H2JSX>{ nearshoring.title }</H2JSX>
+							<HeadingTwoJSX>{ nearshoring.title }</HeadingTwoJSX>
 							<ParagraphJSX>{ nearshoring.description }</ParagraphJSX>
 							<section set:html={ html } className="markdown" />
 							<ArrowAnchorJSX>Explore nearshoring</ArrowAnchorJSX>

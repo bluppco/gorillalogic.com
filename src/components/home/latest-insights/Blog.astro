@@ -1,7 +1,7 @@
 ---
 // IMPORT ASTRO ATOMS
 import ArrowAnchor from "../../../atoms/ArrowAnchor.astro"
-import H3 from "../../../atoms/H3.astro"
+import HeadingThree from "../../../atoms/heading/Three.astro"
 
 // IMPORT CONSTANTS
 import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/cdn"
@@ -23,8 +23,7 @@ const {
         />
     </div>
     <div class="md:h-40">
-        <H3>{ title }</H3>
+        <HeadingThree>{ title }</HeadingThree>
     </div>
     <ArrowAnchor>Read More</ArrowAnchor>
 </div>
-
