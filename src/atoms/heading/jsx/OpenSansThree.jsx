@@ -1,4 +1,4 @@
-const OpenSansH3JSX = ( props ) => {
+const OpenSansThreeJSX = ( props ) => {
 
     return(
         <h3 className="md:text-xl font-open_sans font-semibold uppercase tracking-widest">
@@ -9,4 +9,4 @@ const OpenSansH3JSX = ( props ) => {
 
 }
 
-export default OpenSansH3JSX
+export default OpenSansThreeJSX

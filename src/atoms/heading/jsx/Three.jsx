@@ -1,4 +1,4 @@
-const H3JSX = ( props ) => {
+const HeadingThreeJSX = ( props ) => {
 
     return(
         <h3 className="text-3xl font-lora">
@@ -9,4 +9,4 @@ const H3JSX = ( props ) => {
 
 }
 
-export default H3JSX
+export default HeadingThreeJSX

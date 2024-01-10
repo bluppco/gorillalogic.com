@@ -4,12 +4,12 @@ import { useInView, useAnimation, motion } from "framer-motion"
 import { marked } from "marked"
 
 // IMPORT JSX ATOMS
-import H2JSX from "../../atoms/jsx/H2"
+import HeadingTwoJSX from "../../atoms/heading/jsx/Two"
 import ParagraphJSX from "../../atoms/jsx/Paragraph"
 import ArrowAnchorJSX from "../../atoms/jsx/ArrowAnchor"
 
 // IMPORT CONSTANTS
-import { CDN_LINK, IMAGE_QUALITY } from "../../constants/cdn"
+import { CDN_LINK, IMAGE_QUALITY, IMAGE_WIDTH } from "../../constants/cdn"
 
 // IMPORT JSX LAYOUTS
 import ContainerJSX from "../../layouts/jsx/Container"
@@ -42,7 +42,7 @@ const ServicesAndNearShoring = ( props ) => {
     }
 
 	return(
-		<section className="py-20 z-10 bg-white relative" ref={ ref }>
+		<section className="py-10 md:py-20 z-10 bg-white relative" ref={ ref }>
 			<ContainerJSX>
 				<section className="grid md:grid-cols-5 gap-10">
 					<section className="md:col-span-2 space-y-20">
@@ -52,7 +52,7 @@ const ServicesAndNearShoring = ( props ) => {
 						animate={ controls }
 					>
 						<div className="space-y-6">
-							<H2JSX>{ services.title }</H2JSX>
+							<HeadingTwoJSX>{ services.title }</HeadingTwoJSX>
 							<ParagraphJSX>{ services.description }</ParagraphJSX>
 							<ArrowAnchorJSX>See our services</ArrowAnchorJSX>
 						</div>
@@ -63,7 +63,7 @@ const ServicesAndNearShoring = ( props ) => {
 						animate={ controls }
 					>
 						<div className="space-y-6">
-							<H2JSX>{ nearshoring.title }</H2JSX>
+							<HeadingTwoJSX>{ nearshoring.title }</HeadingTwoJSX>
 							<ParagraphJSX>{ nearshoring.description }</ParagraphJSX>
 							<section set:html={ html } className="markdown" />
 							<ArrowAnchorJSX>Explore nearshoring</ArrowAnchorJSX>
@@ -74,9 +74,9 @@ const ServicesAndNearShoring = ( props ) => {
 						initial="hidden"
 						variants={ slidingVariant }
 						animate={ controls }
-						className="col-span-3 flex flex-col gap-20"
+						className="md:col-span-3 flex flex-col gap-20"
 					>
-						<section className=" relative pl-12 md:pl-20">
+						<section className="relative pl-12 md:pl-20 h-[600px]">
 							{
 
 								services.images.map( ( value, index ) => {
@@ -100,7 +100,7 @@ const ServicesAndNearShoring = ( props ) => {
 									return(
 										<div className={"w-48 md:w-72 aspect-[3/4] bg-zinc-200 " + position } key={ "services-and-nearshoring-" + index }>
 											<img
-												src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
+												src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY + "&width=" + IMAGE_WIDTH }
 												alt=""
 												className="w-full h-full"
 											/>

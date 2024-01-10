@@ -17,7 +17,7 @@ const Location = ( props ) => {
     } = props
 
     return(
-        <div className={` ${ bottom_position ? "mt-16" : "" } relative`}>
+        <div className={` ${ bottom_position ? "mt-12 md:mt-16" : "" } relative`}>
             <div className="w-full aspect-[2/3] bg-zinc-200">
                 {
 

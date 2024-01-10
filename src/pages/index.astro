@@ -1,40 +1,10 @@
 ---
-import { endpointFetch } from "../functions/endpoint"
+import { homeAPI } from "../api/home"
 
 const runtime = Astro.locals.runtime;
-const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
+const data = await homeAPI( runtime.env.ENVIRONMENT )
 
-// NETWORK CALL TO GET DATA
-const network_data = await fetch( endpoint + "/home" )
-const data_json = await network_data.json()
-
-const { home, studies, locations, blogs, testimonials, meta_tags } = data_json.data
-
-// HOME PROPS
-let hero = null
-let services = null
-let nearshoring = null
-let read_why = null
-let case_study = null
-let latest_insights = null
-
-home.map( ( data ) => {
-
-	if( data.slug === "hero" )
-		hero = data
-    else if( data.slug === "services" )
-		services = data
-	else if ( data.slug === "nearshoring" )
-		nearshoring = data
-    else if ( data.slug === "read-why" )
-		read_why = data
-    else if ( data.slug === "case-studies" )
-        case_study = data
-    else if ( data.slug === "latest-insights" )
-		latest_insights = data
-
-})
-
+const { home_data, studies, locations, blogs, testimonials, meta_tags } = data
 
 // IMPORT ASTRO LAYOUTS
 import Layout from "../layouts/Layout.astro"
@@ -62,24 +32,24 @@ import { CDN_LINK } from "../constants/cdn"
 >
 	<HeaderBanner />
 	<Header />
-	<Hero data={ hero } />
+	<Hero data={ home_data.hero } />
 	<ServicesAndNearShoring
 		client:load
-		services={ services }
-		nearshoring={ nearshoring }
+		services={ home_data.services }
+		nearshoring={ home_data.nearshoring }
 	/>
 	<Locations
 		client:load
 		data={ locations }
 	/>
-	<ReadWhy data={ read_why } />
+	<ReadWhy data={ home_data.read_why } />
 	<CaseStudies
 		client:load
-		case_study={ case_study }
+		case_study={ home_data.case_study }
 		data={ studies }
 	/>
 	<LatestInsights
-		insights={ latest_insights }
+		insights={ home_data.latest_insights }
 		data={ blogs }
 	/>
 	<Testimonials data={ testimonials } />

@@ -1,10 +1,10 @@
 ---
 // IMPORT ASTRO ATOMS
 import ArrowAnchor from "../../../atoms/ArrowAnchor.astro"
-import H3 from "../../../atoms/H3.astro"
+import HeadingThree from "../../../atoms/heading/Three.astro"
 
 // IMPORT CONSTANTS
-import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/cdn"
+import { CDN_LINK, IMAGE_QUALITY, IMAGE_WIDTH } from "../../../constants/cdn"
 
 const {
 
@@ -17,14 +17,13 @@ const {
 <div class="space-y-6">
     <div class="w-full aspect-video bg-zinc-200">
         <img
-            src={ CDN_LINK + src + "?quality=" + IMAGE_QUALITY }
+            src={ CDN_LINK + src + "?quality=" + IMAGE_QUALITY + "&width=" + IMAGE_WIDTH }
             alt={ alt }
             class="h-full w-full"
         />
     </div>
     <div class="md:h-40">
-        <H3>{ title }</H3>
+        <HeadingThree>{ title }</HeadingThree>
     </div>
     <ArrowAnchor>Read More</ArrowAnchor>
 </div>
-

@@ -5,8 +5,8 @@ import { useInView, useAnimation, motion } from "framer-motion"
 import ContainerJSX from "../../../layouts/jsx/Container"
 
 // IMPORT JSX ATOMS
-import OpenSansH3JSX from "../../../atoms/jsx/OpenSansH3"
-import H2JSX from "../../../atoms/jsx/H2"
+import OpenSansThreeJSX from "../../../atoms/heading/jsx/OpenSansThree"
+import HeadingTwoJSX from "../../../atoms/heading/jsx/Two"
 import ParagraphJSX from "../../../atoms/jsx/Paragraph"
 import ButtonJSX from "../../../atoms/jsx/Button"
 
@@ -48,12 +48,12 @@ const CaseStudies = ( props ) => {
                         animate={ controls }
                     >
                         <div className="md:space-y-6" ref={ ref }>
-                            <OpenSansH3JSX>{ case_study.title }</OpenSansH3JSX>
-                            <H2JSX>{ case_study.sub_title }</H2JSX>
+                            <OpenSansThreeJSX>{ case_study.title }</OpenSansThreeJSX>
+                            <HeadingTwoJSX>{ case_study.sub_title }</HeadingTwoJSX>
                             <ParagraphJSX>{ case_study.description }</ParagraphJSX>
                         </div>
                     </motion.div>
-                    <div className="grid md:grid-cols-2 gap-4 md:gap-24 py-10">
+                    <div className="grid md:grid-cols-2 gap-10 md:gap-24 py-10">
                         {
 
                             data.map( ( item, index ) => {
