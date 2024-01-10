@@ -2,9 +2,6 @@
 // IMPORT ASTRO LAYOUTS
 import Container from "../../../layouts/Container.astro"
 
-// IMPORT ASTRO ATOMS
-import H1 from "../../../atoms/H1.astro"
-
 // IMPORT ASTRO COMPONENTS
 import HeroDescription from "./HeroDescription"
 import HeroAnimatedImages from "./HeroAnimatedImages.astro"
@@ -18,7 +15,7 @@ const { data } = Astro.props
                 <div class="md:col-span-3">
                     <h1 class="text-white text-6xl md:text-8xl font-lora">{ data.title }<span class="text-gl_sky_blue italic"> your story</span>.</h1>
                 </div>
-                <HeroAnimatedImages />
+                <HeroAnimatedImages data={ data.images } />
             </div>
             <HeroDescription client:load />
         </section>
