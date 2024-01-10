@@ -52,7 +52,7 @@ const CaseStudy = ( props ) => {
 
     return(
         <div className={` ${ top_padding ? "md:mt-32" : "" } space-y-6`}>
-            <div className="w-full aspect-[3/2] bg-transparent cursor-pointer md:group perspective">
+            <div className="w-full aspect-[3/2] bg-transparent cursor-pointer group perspective">
                 <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-700">
                     <div className="w-full aspect-[3/2] bg-zinc-200 absolute backface-hidden">
                         <img
