@@ -76,10 +76,10 @@ const CaseStudy = ( props ) => {
                             <div className="flex flex-wrap gap-x-8 gap-y-2">
                                 {
 
-                                    primary_technology.map( ( value ) => {
+                                    primary_technology.map( ( value, index ) => {
 
                                         return(
-                                            <div className="pl-2">
+                                            <div className="pl-2" key={ "primary-technology" + index }>
                                                 <li className="font-open_sans text-2xl marker:text-gl_blue">{ value }</li>
                                             </div>
                                         )

@@ -21,10 +21,10 @@ const Location = ( props ) => {
             <div className="w-full aspect-[2/3] bg-zinc-200">
                 {
 
-                    video_src.map( ( value ) => {
+                    video_src.map( ( value, index ) => {
 
                         return(
-                            <Video cy="locations-video">
+                            <Video cy="locations-video" key={ "locations-video" + index }>
                                 <source src={ CDN_LINK + value.file } type="video/mp4"/>
                             </Video>
                         )
