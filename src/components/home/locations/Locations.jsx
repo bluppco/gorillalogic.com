@@ -39,7 +39,7 @@ const Locations = ( props ) => {
             animate={ controls }
         >
             <ContainerJSX>
-                <section className="grid grid-cols-2 md:grid-cols-4 pb-20 md:pb-32 pt-10 md:pt-48" ref={ ref }>
+                <section className="grid grid-cols-2 md:grid-cols-4 pb-20 md:pb-32 pt-10 md:pt-36" ref={ ref }>
                     {
 
                         data.map( ( item, index ) => {
