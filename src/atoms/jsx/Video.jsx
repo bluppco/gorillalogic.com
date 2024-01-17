@@ -5,12 +5,14 @@ const VideoJSX = ( props ) => {
     return(
         <video
             loop={ true }
-            autoPlay={ true }
+            autoPlay={ false }
             muted={ true }
             playsInline={ true }
             preload="auto"
             className="h-full w-full object-cover"
             data-cy={ cy }
+            onMouseOver={event => event.target.play()}
+            onMouseOut={event => event.target.pause()}
         >
             { props.children }
         </video>
