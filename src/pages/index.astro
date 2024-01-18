@@ -1,26 +1,57 @@
 ---
-import { endpointFetch } from "../functions/endpoint"
+import { homeAPI } from "../api/home"
 
-// const runtime = Astro.locals.runtime;
-// const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
+const runtime = Astro.locals.runtime;
+const data = await homeAPI( runtime.env.ENVIRONMENT )
 
-// // NETWORK CALL TO GET DATA
-// const network_data = await fetch( endpoint + "/home" )
-// const data_json = await network_data.json()
+const { home_data, studies, locations, blogs, testimonials, meta_tags } = data
+
+// IMPORT ASTRO LAYOUTS
+import Layout from "../layouts/Layout.astro"
 
 // IMPORT ASTRO COMPONENTS
-import Layout from "../layouts/Layout.astro"
+import Footer from "../components/common/footer/Footer.astro"
+import Header from "../components/common/header/Header.astro"
 import HeaderBanner from "../components/common/HeaderBanner.astro"
-import Container from "../layouts/Container.astro";
+
+import CaseStudies from "../components/home/case-studies/CaseStudies"
+import Hero from "../components/home/hero/Hero.astro"
+import LatestInsights from "../components/home/latest-insights/LatestInsights.astro"
+import Locations from "../components/home/locations/Locations"
+import ReadWhy from "../components/home/ReadWhy.astro"
+import ServicesAndNearShoring from "../components/home/ServicesAndNearShoring"
+import Testimonials from "../components/home/Testimonials.astro"
+
+// IMPORT CONSTANTS
+import { CDN_LINK } from "../constants/cdn"
 ---
-<Layout>
+<Layout
+	title={ meta_tags.title }
+	description={ meta_tags.description }
+	image={ CDN_LINK + meta_tags.cover }
+>
 	<HeaderBanner />
-	<section class="bg-background py-10">
-		<Container>
-			<section class="grid grid-cols-2">
-				<!-- HAVE TO HARDCODE THE COLOR AS WHITE IS NOT WORKING DIRECTLY SINCE TAILWIND UPDATE 3.4.0 -->
-				<h1 class="font-lora text-7xl text-[#fff]">We build the technology that tells your story.</h1>
-			</section>
-		</Container>
-	</section>
+	<Header />
+	<Hero data={ home_data.hero } />
+	<ServicesAndNearShoring
+		client:load
+		services={ home_data.services }
+		nearshoring={ home_data.nearshoring }
+	/>
+	<Locations
+		client:load
+		data={ locations }
+	/>
+	<ReadWhy data={ home_data.read_why } />
+	<CaseStudies
+		client:load
+		case_study={ home_data.case_study }
+		data={ studies }
+	/>
+	<LatestInsights
+		insights={ home_data.latest_insights }
+		data={ blogs }
+	/>
+	<Testimonials data={ testimonials } />
+	<Footer />
 </Layout>

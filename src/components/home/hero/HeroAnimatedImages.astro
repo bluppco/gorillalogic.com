@@ -1,0 +1,25 @@
+---
+// IMPORT CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/cdn"
+
+const { data } = Astro.props
+---
+<section class="hidden md:flex md:col-span-2">
+    {
+
+        data.slice(0,2).map( ( value, index ) => {
+
+            return(
+                <div class={ index % 2 === 0 ? "w-60 h-80 bg-zinc-200 animate-sliding relative z-0" : "w-60 h-72 bg-zinc-200 animate-slow_sliding relative z-0"}>
+                    <img
+                        src={ CDN_LINK + value.file + "?quality=" + IMAGE_QUALITY }
+                        alt=""
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+            )
+
+        })
+
+    }
+</section>
