@@ -38,11 +38,13 @@ import { CDN_LINK } from "../constants/cdn"
 		services={ home_data.services }
 		nearshoring={ home_data.nearshoring }
 	/>
-	<Locations
-		client:load
-		data={ locations }
-	/>
-	<ReadWhy data={ home_data.read_why } />
+	<section class="bg-no-repeat" style=`background-image: url(${ "/images/globe.svg" })`>
+		<Locations
+			client:load
+			data={ locations }
+		/>
+		<ReadWhy data={ home_data.read_why } />
+	</section>
 	<CaseStudies
 		client:load
 		case_study={ home_data.case_studies }
