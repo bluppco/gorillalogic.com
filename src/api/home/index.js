@@ -17,7 +17,7 @@ export const homeAPI = async ( environment ) => {
         services : "",
         nearshoring : "",
         read_why : "",
-        case_study : "",
+        case_studies : "",
         latest_insights : ""
 
     }
@@ -31,8 +31,8 @@ export const homeAPI = async ( environment ) => {
             home_data.nearshoring = data
         else if ( data.slug === "read-why" )
             home_data.read_why = data
-        else if ( data.slug === "case-study" )
-            home_data.case_study = data
+        else if ( data.slug === "case-studies" )
+            home_data.case_studies = data
         else if( data.slug === "latest-insights" )
             home_data.latest_insights = data
 

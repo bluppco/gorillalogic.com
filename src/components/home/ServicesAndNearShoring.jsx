@@ -18,7 +18,7 @@ const ServicesAndNearShoring = ( props ) => {
 
 	const { services, nearshoring } = props
 
-	const html = marked.parse( nearshoring.description )
+	const description = marked.parse( nearshoring.description )
 
 	const ref = useRef()
     const isInView = useInView( ref )
@@ -64,8 +64,7 @@ const ServicesAndNearShoring = ( props ) => {
 					>
 						<div className="space-y-6">
 							<HeadingTwoJSX>{ nearshoring.title }</HeadingTwoJSX>
-							<ParagraphJSX>{ nearshoring.description }</ParagraphJSX>
-							<section set:html={ html } className="markdown" />
+							<section dangerouslySetInnerHTML={{ __html: description }} className="markdown" />
 							<ArrowAnchorJSX>Explore nearshoring</ArrowAnchorJSX>
 						</div>
 					</motion.div>
