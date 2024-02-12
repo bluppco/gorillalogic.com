@@ -1,23 +1,26 @@
 ---
-// IMPORT ASTRO LAYOUTS
+// IMPORTS ASTRO LAYOUTS
 import Container from "../../../layouts/Container.astro"
 
-// IMPORT ASTRO COMPONENTS
-import HeroDescription from "./HeroDescription"
-import HeroAnimatedImages from "./HeroAnimatedImages.astro"
+// IMPORTS CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/cdn"
 
 const { data } = Astro.props
 ---
-<section class="bg-background py-10 md:py-24">
+<section class="bg-background py-10 md:py-24 h-full" style=`background-image: url(${ CDN_LINK + data.cover + "?quality=" + IMAGE_QUALITY })`>
     <Container>
-        <section>
-            <div class="grid md:grid-cols-5 gap-10">
-                <div class="md:col-span-3">
-                    <h1 class="text-white text-5xl md:text-8xl font-lora">{ data.title }<span class="text-gl_sky_blue italic"> your story</span>.</h1>
-                </div>
-                <HeroAnimatedImages data={ data.images } />
+        <section class="w-[63%]">
+            <p class="text-white text-5xl font-lora">Digital engineering challenges?</p>
+            <div class="pt-2">
+                <span class="text-white text-7xl font-lora">{ data.sub_title } <span class="text-gl_sky_blue italic">solutions.</span></span>
             </div>
-            <HeroDescription client:load />
+            <div class="pt-8">
+                <p class="text-xl text-white font-open_sans">{ data.description }</p>
+            </div>
+            <div class="pt-4">
+                <p class="text-4xl text-white font-lora">{ data.button_title }</p>
+            </div>
         </section>
     </Container>
+    <section class="bg-gradient-to-r from-bg-[#061b36e6] to-bg-[#061b3613]" />
 </section>

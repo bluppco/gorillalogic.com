@@ -30,9 +30,11 @@ import { CDN_LINK } from "../constants/cdn"
 	description={ meta_tags.description }
 	image={ CDN_LINK + meta_tags.cover }
 >
-	<HeaderBanner />
-	<Header />
-	<Hero data={ home_data.hero } />
+	<section class="h-screen max-h-screen">
+		<HeaderBanner />
+		<Header />
+		<Hero data={ home_data.hero } />
+	</section>
 	<ServicesAndNearShoring
 		client:load
 		services={ home_data.services }
