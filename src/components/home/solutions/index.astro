@@ -1,0 +1,27 @@
+---
+// IMPORTS ASTRO LAYOUTS
+import Container from "../../../layouts/Container.astro"
+
+// IMPORTS JSX COMPONENTS
+import Carousel from "./carousel/index"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwo from "../../../atoms/heading/two/white/index.astro"
+import Button from "../../../atoms/buttons/transparent/white/index.astro"
+
+const { data } = Astro.props
+---
+<section class="bg-gl_dark_blue py-44">
+    <Container>
+        <section class="space-y-14">
+            <div class="space-y-4">
+                <HeadingTwo>{ data.title }</HeadingTwo>
+                <p class="text-xl font-open_sans font-light text-white">{ data.description }</p>
+            </div>
+            <Carousel client:load />
+            <div class="flex justify-center">
+                <Button>{ data.button_title }</Button>
+            </div>
+        </section>
+    </Container>
+</section>

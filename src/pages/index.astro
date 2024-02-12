@@ -21,6 +21,9 @@ import Locations from "../components/home/locations/Locations"
 import ReadWhy from "../components/home/ReadWhy.astro"
 import Testimonials from "../components/home/Testimonials.astro"
 
+// IMPORTS JSX COMPONENTS
+import Solutions from "../components/home/solutions/index.astro"
+
 // IMPORT CONSTANTS
 import { CDN_LINK } from "../constants/cdn"
 ---
@@ -34,6 +37,7 @@ import { CDN_LINK } from "../constants/cdn"
 		<Header />
 		<Hero data={ home_data.hero } />
 	</section>
+	<Solutions data={ home_data.solutions } />
 	<section class="bg-no-repeat" style=`background-image: url(${ "/images/globe.svg" })`>
 		<Locations
 			client:load

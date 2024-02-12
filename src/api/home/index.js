@@ -16,7 +16,8 @@ export const homeAPI = async ( environment ) => {
         hero : "",
         read_why : "",
         case_studies : "",
-        latest_insights : ""
+        latest_insights : "",
+        solutions : ""
 
     }
     home.map( ( data ) => {
@@ -29,6 +30,8 @@ export const homeAPI = async ( environment ) => {
             home_data.case_studies = data
         else if( data.slug === "latest-insights" )
             home_data.latest_insights = data
+        else if( data.slug === "solutions" )
+            home_data.solutions = data
 
     })
 
