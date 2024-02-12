@@ -19,7 +19,6 @@ import Hero from "../components/home/hero/Hero.astro"
 import LatestInsights from "../components/home/latest-insights/LatestInsights.astro"
 import Locations from "../components/home/locations/Locations"
 import ReadWhy from "../components/home/ReadWhy.astro"
-import ServicesAndNearShoring from "../components/home/ServicesAndNearShoring"
 import Testimonials from "../components/home/Testimonials.astro"
 
 // IMPORT CONSTANTS
@@ -35,11 +34,6 @@ import { CDN_LINK } from "../constants/cdn"
 		<Header />
 		<Hero data={ home_data.hero } />
 	</section>
-	<ServicesAndNearShoring
-		client:load
-		services={ home_data.services }
-		nearshoring={ home_data.nearshoring }
-	/>
 	<section class="bg-no-repeat" style=`background-image: url(${ "/images/globe.svg" })`>
 		<Locations
 			client:load

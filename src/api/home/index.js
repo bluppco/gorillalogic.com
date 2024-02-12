@@ -14,8 +14,6 @@ export const homeAPI = async ( environment ) => {
 
         // HOME PROPS
         hero : "",
-        services : "",
-        nearshoring : "",
         read_why : "",
         case_studies : "",
         latest_insights : ""
@@ -25,10 +23,6 @@ export const homeAPI = async ( environment ) => {
 
         if( data.slug === "hero" )
             home_data.hero = data
-        else if( data.slug === "services" )
-            home_data.services = data
-        else if ( data.slug === "nearshoring" )
-            home_data.nearshoring = data
         else if ( data.slug === "read-why" )
             home_data.read_why = data
         else if ( data.slug === "case-studies" )
