@@ -45,13 +45,15 @@ const Locations = ( props ) => {
                         data.map( ( item, index ) => {
 
                             return(
-                                <Location
-                                    bottom_position={ index % 2 - 1 }
-                                    src={ item.cover }
-                                    alt={ item.location }
-                                    title={ item.location }
-                                    video_src={ item.video }
-                                />
+                                <div key={ index }>
+                                    <Location
+                                        bottom_position={ index % 2 - 1 }
+                                        src={ item.cover }
+                                        alt={ item.location }
+                                        title={ item.location }
+                                        video_src={ item.video }
+                                    />
+                                </div>
                             )
 
                         })
