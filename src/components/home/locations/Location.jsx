@@ -17,7 +17,7 @@ const Location = ( props ) => {
     } = props
 
     return(
-        <div className={` ${ bottom_position ? "mt-12 md:mt-16" : "" } relative`}>
+        <div className={` ${ bottom_position ? "mt-12 md:mt-16" : "" } relative h-fit`}>
             <div className="w-full aspect-[2/3] bg-zinc-200">
                 {
 
@@ -33,7 +33,7 @@ const Location = ( props ) => {
 
                 }
             </div>
-            <div className={` ${ bottom_position ? "bottom-6" : "bottom-[88px]" } md:absolute flex gap-4 items-center justify-center w-full pt-2 md:pt-0`}>
+            <div className="md:absolute md:bottom-6 flex gap-4 items-center justify-center w-full pt-2 md:pt-0">
                 <div className="w-6 md:w-14 aspect-video">
                     <img
                         src={ CDN_LINK + src + "?quality=" + IMAGE_QUALITY }

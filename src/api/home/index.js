@@ -14,27 +14,24 @@ export const homeAPI = async ( environment ) => {
 
         // HOME PROPS
         hero : "",
-        services : "",
-        nearshoring : "",
         read_why : "",
-        case_study : "",
-        latest_insights : ""
+        case_studies : "",
+        latest_insights : "",
+        solutions : ""
 
     }
     home.map( ( data ) => {
 
         if( data.slug === "hero" )
             home_data.hero = data
-        else if( data.slug === "services" )
-            home_data.services = data
-        else if ( data.slug === "nearshoring" )
-            home_data.nearshoring = data
         else if ( data.slug === "read-why" )
             home_data.read_why = data
-        else if ( data.slug === "case-study" )
-            home_data.case_study = data
+        else if ( data.slug === "case-studies" )
+            home_data.case_studies = data
         else if( data.slug === "latest-insights" )
             home_data.latest_insights = data
+        else if( data.slug === "solutions" )
+            home_data.solutions = data
 
     })
 
