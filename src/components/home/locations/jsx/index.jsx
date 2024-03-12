@@ -9,6 +9,7 @@ import Container from "@/layouts/container/jsx/index.jsx"
 
 // IMPORTS COMPONENTS
 import LocationCard from "@/components/home/locations/card/index.jsx"
+import PictureInternalContain from "@/atoms/picture/internal/jsx/contain"
 
 const Locations = ( props ) => {
 
@@ -17,6 +18,7 @@ const Locations = ( props ) => {
 
         CDN,
         data,
+        locations,
         PROJECT
 
     } = props
@@ -49,28 +51,42 @@ const Locations = ( props ) => {
             variants={ slidingVariant }
         >
             <Container>
-                <section className="grid grid-cols-2 md:grid-cols-4 pb-20 md:pb-32 pt-10 md:pt-36" ref={ ref }>
-                    {
+                <section>
+                    <section className="space-y-6 pt-20">
+                        <div className="flex gap-2 items-center justify-center">
+                            <div className="size-6">
+                                <PictureInternalContain
+                                    alternative_text=""
+                                    source="icons/location-hub.svg"
+                                />
+                            </div>
+                            <div className="text-xl uppercase font-open_sans font-semibold text-center tracking-widest">{ data.title }</div>
+                        </div>
+                        <div className="font-lora text-center text-5xl">{ data.sub_title }</div>
+                    </section>
+                    <section className="grid grid-cols-2 md:grid-cols-4 pb-20 md:pb-32 pt-10 md:pt-32" ref={ ref }>
+                        {
 
-                        data.map( ( item, index ) => {
+                            locations.map( ( item, index ) => {
 
-                            return(
-                                <div key={ index }>
-                                    <LocationCard
-                                        alternative_text={ item.location }
-                                        bottom_position={ index % 2 - 1 }
-                                        CDN={ CDN }
-                                        PROJECT={ PROJECT }
-                                        source={ item.cover }
-                                        title={ item.location }
-                                        video_source={ item.video }
-                                    />
-                                </div>
-                            )
+                                return(
+                                    <div key={ index }>
+                                        <LocationCard
+                                            alternative_text={ item.location }
+                                            bottom_position={ index % 2 - 1 }
+                                            CDN={ CDN }
+                                            PROJECT={ PROJECT }
+                                            source={ item.cover }
+                                            title={ item.location }
+                                            video_source={ item.video }
+                                        />
+                                    </div>
+                                )
 
-                        })
+                            })
 
-                    }
+                        }
+                    </section>
                 </section>
             </Container>
         </motion.div>

@@ -22,7 +22,8 @@ export const homeAPI = async ( ENVIRONMENT, ENDPOINT ) => {
         read_why : "",
         case_studies : "",
         latest_insights : "",
-        solutions : ""
+        solutions : "",
+        locations: ""
 
     }
     home.map( ( data ) => {
@@ -37,6 +38,8 @@ export const homeAPI = async ( ENVIRONMENT, ENDPOINT ) => {
             home_data.latest_insights = data
         else if( data.slug === "solutions" )
             home_data.solutions = data
+        else if( data.slug === "locations" )
+            home_data.locations = data
 
     })
 

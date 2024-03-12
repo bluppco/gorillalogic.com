@@ -8,14 +8,16 @@ const {
 
     CDN,
     data,
+    locations,
     PROJECT
 
 } = Astro.props
 
 ---
 <Locations
+    CDN={ CDN }
     client:load
     data={ data }
-    CDN={ CDN }
+    locations={ locations }
     PROJECT={ PROJECT }
 />
