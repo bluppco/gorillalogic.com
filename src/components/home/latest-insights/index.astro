@@ -1,0 +1,54 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import Blog from "@/components/home/latest-insights/blog/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import Button from "@/atoms/buttons/secondary/index.astro"
+import HeadingThree from "@/atoms/headings/three/open-sans/uppercase/index.astro"
+import HeadingTwo from "@/atoms/headings/two/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+	CDN,
+	data,
+	insights,
+	PROJECT
+
+} = Astro.props
+
+---
+<Container>
+	<section class="py-20">
+		<div>
+			<HeadingThree>{ insights.title }</HeadingThree>
+			<HeadingTwo>{ insights.sub_title }</HeadingTwo>
+		</div>
+		<div class="grid md:grid-cols-3 gap-8 py-14">
+			{
+
+				data.map( ( item ) => {
+
+					return(
+						<Blog
+							alternative_text={ item.title }
+							CDN={ CDN }
+							PROJECT={ PROJECT }
+							source={ item.cover }
+							title={ item.title }
+						/>
+					)
+
+				})
+
+			}
+		</div>
+		<div class="flex justify-center">
+			<Button>Explore more insights</Button>
+		</div>
+	</section>
+</Container>

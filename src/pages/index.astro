@@ -1,59 +1,52 @@
 ---
-import { homeAPI } from "../api/home"
 
-const runtime = Astro.locals.runtime;
-const data = await homeAPI( runtime.env.ENVIRONMENT )
+// RUNTIME
+const runtime = Astro.locals.runtime
 
-const { home_data, studies, locations, blogs, testimonials, meta_tags } = data
+const {
 
-// IMPORT ASTRO LAYOUTS
-import Layout from "../layouts/Layout.astro"
+    CDN,
+    ENDPOINT,
+    ENVIRONMENT,
+    PROJECT
 
-// IMPORT ASTRO COMPONENTS
-import Footer from "../components/common/footer/Footer.astro"
-import Header from "../components/common/header/Header.astro"
-import HeaderBanner from "../components/common/HeaderBanner.astro"
+} = runtime.env
+const data = await homeAPI( ENVIRONMENT, ENDPOINT )
 
-import CaseStudies from "../components/home/case-studies/CaseStudies"
-import Hero from "../components/home/hero/Hero.astro"
-import LatestInsights from "../components/home/latest-insights/LatestInsights.astro"
-import Locations from "../components/home/locations/Locations"
-import ReadWhy from "../components/home/ReadWhy.astro"
-import Testimonials from "../components/home/Testimonials.astro"
+// API
+import { homeAPI } from "@/api/home/index.js"
 
-// IMPORTS JSX COMPONENTS
-import Solutions from "../components/home/solutions/index.astro"
+const {
 
-// IMPORT CONSTANTS
-import { CDN_LINK } from "../constants/cdn"
+	blogs,
+	home_data,
+	locations,
+	meta_tags,
+	studies,
+	testimonials
+
+} = data
+
+// IMPORTS ASTRO LAYOUTS
+import Layout from "@/layouts/layout/index.astro"
+
+// IMPORTS HOME COMPONENT
+import Home from "@/components/home/index.astro"
+
 ---
 <Layout
-	title={ meta_tags.title }
 	description={ meta_tags.description }
-	image={ CDN_LINK + meta_tags.cover }
+	image={ CDN + meta_tags.cover }
+	title={ meta_tags.title }
 >
-	<section class="h-screen max-h-screen">
-		<HeaderBanner />
-		<Header />
-		<Hero data={ home_data.hero } />
-	</section>
-	<Solutions data={ home_data.solutions } />
-	<section class="bg-no-repeat" style=`background-image: url(${ "/images/globe.svg" })`>
-		<Locations
-			client:load
-			data={ locations }
-		/>
-		<ReadWhy data={ home_data.read_why } />
-	</section>
-	<CaseStudies
-		client:load
-		case_study={ home_data.case_studies }
-		data={ studies }
+	<Home
+		blogs={ blogs }
+		CDN={ CDN }
+		ENVIRONMENT={ ENVIRONMENT }
+		home_data={ home_data }
+		locations={ locations }
+		PROJECT={ PROJECT }
+		studies={ studies }
+		testimonials={ testimonials }
 	/>
-	<LatestInsights
-		insights={ home_data.latest_insights }
-		data={ blogs }
-	/>
-	<Testimonials data={ testimonials } />
-	<Footer />
 </Layout>

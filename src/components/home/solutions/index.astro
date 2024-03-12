@@ -1,24 +1,34 @@
 ---
+
 // IMPORTS ASTRO LAYOUTS
-import Container from "../../../layouts/Container.astro"
+import Container from "@/layouts/container/index.astro"
 
 // IMPORTS JSX COMPONENTS
-import Carousel from "./carousel/index"
+import Carousel from "@/components/home/solutions/carousel/index.jsx"
 
 // IMPORTS ASTRO ATOMS
-import HeadingTwo from "../../../atoms/heading/two/white/index.astro"
-import Button from "../../../atoms/buttons/transparent/white/index.astro"
+import Button from "@/atoms/buttons/transparent/white/index.astro"
+import HeadingTwo from "@/atoms/headings/two/white/index.astro"
 
+// GET PROPS
 const { data } = Astro.props
+
 ---
-<section class="bg-gl_dark_blue py-44">
+<section class="bg-gl_dark_blue py-14">
     <Container>
         <section class="space-y-14">
             <div class="space-y-4">
                 <HeadingTwo>{ data.title }</HeadingTwo>
                 <p class="text-xl font-open_sans font-light text-white">{ data.description }</p>
             </div>
-            <Carousel client:load />
+            {
+
+                false &&
+                <Carousel
+                    client:load
+                />
+
+            }
             <div class="flex justify-center">
                 <Button>{ data.button_title }</Button>
             </div>
