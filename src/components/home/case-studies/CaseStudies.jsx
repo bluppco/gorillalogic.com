@@ -5,10 +5,10 @@ import { useInView, useAnimation, motion } from "framer-motion"
 import ContainerJSX from "../../../layouts/jsx/Container"
 
 // IMPORT JSX ATOMS
-import OpenSansThreeJSX from "../../../atoms/heading/jsx/OpenSansThree"
-import HeadingTwoJSX from "../../../atoms/heading/jsx/Two"
-import ParagraphJSX from "../../../atoms/jsx/Paragraph"
-import ButtonJSX from "../../../atoms/jsx/Button"
+import OpenSansThreeJSX from "../../../atoms/heading/three/open-sans/jsx"
+import HeadingTwoJSX from "../../../atoms/heading/two/jsx"
+import ParagraphJSX from "../../../atoms/paragraphs/xl/jsx"
+import ButtonJSX from "../../../atoms/buttons/transparent/blue/jsx"
 
 // IMPORT JSX COMPONENTS
 import CaseStudy from "./CaseStudy"

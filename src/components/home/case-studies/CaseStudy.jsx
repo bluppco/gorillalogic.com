@@ -2,9 +2,9 @@ import { useEffect, useRef } from "react"
 import { useInView, useAnimation, motion } from "framer-motion"
 
 // IMPORT JSX ATOMS
-import HeadingThreeJSX from "../../../atoms/heading/jsx/Three"
-import Paragraph from "../../../atoms/jsx/Paragraph"
-import ArrowAnchor from "../../../atoms/jsx/ArrowAnchor"
+import HeadingThreeJSX from "../../../atoms/heading/three/jsx"
+import Paragraph from "../../../atoms/paragraphs/xl/jsx"
+import ArrowAnchor from "../../../atoms/arrow-anchor/jsx"
 
 // IMPORT CONSTANTS
 import { CDN_LINK, IMAGE_QUALITY, IMAGE_WIDTH_1200 } from "../../../constants/cdn"

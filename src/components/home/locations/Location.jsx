@@ -1,5 +1,5 @@
 // IMPORT JSX ATOMS
-import Video from "../../../atoms/jsx/Video"
+import Video from "../../../atoms/video/jsx"
 
 // IMPORT CONSTANTS
 import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/cdn"
