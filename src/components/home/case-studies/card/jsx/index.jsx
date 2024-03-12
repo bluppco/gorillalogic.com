@@ -1,25 +1,28 @@
+// IMPORTS REACT
 import { useEffect, useRef } from "react"
+
+// IMPORTS FRAMER MOTION
 import { useInView, useAnimation, motion } from "framer-motion"
 
-// IMPORT JSX ATOMS
-import HeadingThreeJSX from "../../../atoms/heading/three/jsx"
-import Paragraph from "../../../atoms/paragraphs/xl/jsx"
-import ArrowAnchor from "../../../atoms/arrow-anchor/jsx"
+// IMPORTS ATOMS
+import ArrowAnchor from "@/atoms/arrow-anchor/jsx/index.jsx"
+import HeadingThree from "@/atoms/headings/three/jsx/index.jsx"
+import ParagraphXl from "@/atoms/paragraphs/xl/jsx/index.jsx"
 
-// IMPORT CONSTANTS
-import { CDN_LINK, IMAGE_QUALITY, IMAGE_WIDTH_1200 } from "../../../constants/cdn"
+const CaseStudyCard = ( props ) => {
 
-const CaseStudy = ( props ) => {
-
+    // GET PROPS
     const {
 
-        src,
-        alt,
-        title,
-        description,
+        alternative_text,
         anchor_text,
-        top_padding,
-        primary_technology
+        description,
+        primary_technology,
+        source,
+        title,
+        CDN,
+        PROJECT,
+        top_padding
 
     } = props
 
@@ -51,14 +54,14 @@ const CaseStudy = ( props ) => {
     }
 
     return(
-        <div className={` ${ top_padding ? "md:mt-32" : "" } space-y-6`}>
+        <div className={` ${ top_padding ? "md:mt-32" : "" } space-y-6 `}>
             <div className="w-full aspect-[3/2] bg-transparent cursor-pointer group perspective">
                 <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-700">
                     <div className="w-full aspect-[3/2] bg-zinc-200 absolute backface-hidden">
                         <img
-                            src={ CDN_LINK + src + "?quality=" + IMAGE_QUALITY + "&width=" + IMAGE_WIDTH_1200 }
-                            alt={ alt }
+                            alt={ alternative_text }
                             className="h-full w-full"
+                            src={ CDN + PROJECT + "/" + source + "?quality=80" + "&width=1200" }
                         />
                     </div>
                     <div className="absolute my-rotate-y-180 backface-hidden w-full h-full bg-blue-100 overflow-hidden">
@@ -66,9 +69,9 @@ const CaseStudy = ( props ) => {
                             <div className="flex gap-2">
                                 <div className="h-8 aspect-video">
                                     <img
-                                        src="/icons/primary_tech.svg"
-                                        alt={ alt }
+                                        alt={ alternative_text }
                                         className="h-8 aspect-video"
+                                        src="/icons/primary_tech.svg"
                                     />
                                 </div>
                                 <p className="font-open_sans font-semibold text-xl uppercase tracking-widest">Primary technology</p>
@@ -93,19 +96,19 @@ const CaseStudy = ( props ) => {
                 </div>
             </div>
             <motion.div
+                animate={ controls }
                 className="space-y-6" ref={ ref }
                 initial="hidden"
                 variants={ slidingVariant }
-                animate={ controls }
             >
-                <HeadingThreeJSX>{ title }</HeadingThreeJSX>
-                <Paragraph>{ description }</Paragraph>
+                <HeadingThree>{ title }</HeadingThree>
+                <ParagraphXl>{ description }</ParagraphXl>
             </motion.div>
             <motion.div
+                animate={ controls }
                 className="space-y-6" ref={ ref }
                 initial="hidden"
                 variants={ delayedSlidingVariant }
-                animate={ controls }
             >
                 <ArrowAnchor>{ anchor_text }</ArrowAnchor>
             </motion.div>
@@ -114,4 +117,4 @@ const CaseStudy = ( props ) => {
 
 }
 
-export default CaseStudy
+export default CaseStudyCard

@@ -1,13 +1,19 @@
 ---
+
 // IMPORTS ASTRO LAYOUTS
-import Container from "../../../layouts/Container.astro"
+import Container from "@/layouts/container/index.astro"
 
-// IMPORTS CONSTANTS
-import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/cdn"
+// GET PROPS
+const {
 
-const { data } = Astro.props
+    CDN,
+    data,
+    PROJECT
+
+} = Astro.props
+
 ---
-<section class="py-10 md:pt-32 md:pb-48 h-full relative bg-cover" style=`background-image: url(${ CDN_LINK + data.cover + "?quality=" + IMAGE_QUALITY })`>
+<section class="py-10 md:pt-32 md:pb-48 h-full relative bg-cover" style=`background-image: url(${ CDN + PROJECT + "/" + data.cover + "?quality=80" })`>
     <Container>
         <section class="relative z-10 flex flex-col justify-between h-full">
             <div class="w-[60%]">

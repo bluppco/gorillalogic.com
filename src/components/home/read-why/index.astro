@@ -1,0 +1,26 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingThree from "@/atoms/headings/three/uppercase/index.astro"
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+// GET ASTRO PROPS
+const { data } = Astro.props
+
+---
+<Container>
+    <section class="flex flex-col md:flex-row gap-8 md:gap-20 py-16 border-t border-t-black/30">
+        <HeadingThree>{ data.title }</HeadingThree>
+        <button class="bg-gl_blue hover:bg-gl_blue/60 rounded-full p-4 w-fit">
+            <div class="size-12">
+                <PictureInternalContain
+                    alternative_text="white right arrow"
+                    source="/icons/white_right_arrow.svg"
+                />
+            </div>
+        </button>
+    </section>
+</Container>

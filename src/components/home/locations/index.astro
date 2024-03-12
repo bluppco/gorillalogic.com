@@ -1,0 +1,21 @@
+---
+
+// IMPORTS JSX COMPONENTS
+import Locations from "@/components/home/locations/jsx/index.jsx"
+
+// GET ASTRO PROPS
+const {
+
+    CDN,
+    data,
+    PROJECT
+
+} = Astro.props
+
+---
+<Locations
+    client:load
+    data={ data }
+    CDN={ CDN }
+    PROJECT={ PROJECT }
+/>

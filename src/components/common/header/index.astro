@@ -1,0 +1,49 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS JSX COMPONENTS
+import MobileHeader from "@/components/common/header/mobile/index.jsx"
+import UnorderedList from "@/components/common/header/unordered-list/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import ButtonPrimary from "@/atoms/buttons/primary/index.astro"
+import Link from "@/atoms/links/index.astro"
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+// IMPORTS COLLECTION FROM CONTENT
+import { getCollection } from "astro:content"
+
+// IMPORTS HEADER COLLECTION
+let header_data = await getCollection("header")
+header_data = header_data.sort( (a, b) => a.data.order - b.data.order )
+
+---
+<header class="hidden md:block sticky top-0 z-50">
+    <section class="flex items-center justify-center h-20 bg-background border-b border-b-white">
+        <Container>
+            <nav class="flex justify-between items-center">
+                <Link href="/" aria_label="Gorilla Logic Logo">
+                    <div class="w-32 aspect-video">
+                        <PictureInternalContain
+                            alternative_text="Gorilla Logic Logo"
+                            source="/logo/gl_logo.svg"
+                        />
+                    </div>
+                </Link>
+                <div class="flex items-center gap-8">
+                    <UnorderedList
+                        header_data={ header_data }
+                    />
+                    <Link href="/contact-us" aria-label="talk to an expert">
+                        <ButtonPrimary>Talk to an expert</ButtonPrimary>
+                    </Link>
+                </div>
+            </nav>
+        </Container>
+    </section>
+</header>
+<MobileHeader
+    client:load
+/>

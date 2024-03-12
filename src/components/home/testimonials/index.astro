@@ -1,8 +1,17 @@
 ---
-// IMPORT CONSTANTS
-import { CDN_LINK, IMAGE_QUALITY } from "../../constants/cdn"
 
-const { data } = Astro.props
+// IMPORTS ASTRO ATOMS
+import Picture from "@/atoms/picture/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    CDN,
+    data,
+    PROJECT
+
+} = Astro.props
+
 ---
 <section class="bg-gl_sky_blue">
     <div class="relative flex overflow-x-hidden">
@@ -15,10 +24,11 @@ const { data } = Astro.props
                         <div class="flex gap-8 items-center border-r border-black px-14 md:py-2">
                             <p class="md:text-xl text-black select-none font-open_sans font-semibold">{ value.title }</p>
                             <div class="w-28 aspect-video">
-                                <img
-                                    src={ CDN_LINK + value.cover + "?quality=" + IMAGE_QUALITY }
-                                    alt={ value.title }
-                                    class="w-28 aspect-video"
+                                <Picture
+                                    alternative_text={ value.title }
+                                    CDN={ CDN }
+                                    PROJECT={ PROJECT }
+                                    source={ value.cover }
                                 />
                             </div>
                         </div>
@@ -38,10 +48,11 @@ const { data } = Astro.props
                         <div class="flex gap-8 items-center border-r border-black px-14 md:py-2">
                             <p class="md:text-xl text-black select-none font-open_sans font-semibold">{ value.title }</p>
                             <div class="w-28 aspect-video">
-                                <img
-                                    src={ CDN_LINK + value.cover + "?quality=" + IMAGE_QUALITY }
-                                    alt={ value.title }
-                                    class="w-28 aspect-video"
+                                <Picture
+                                    alternative_text={ value.title }
+                                    CDN={ CDN }
+                                    PROJECT={ PROJECT }
+                                    source={ value.cover }
                                 />
                             </div>
                         </div>

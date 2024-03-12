@@ -1,0 +1,33 @@
+---
+
+// IMPORT ASTRO ATOMS
+import ArrowAnchor from "@/atoms/arrow-anchor/index.astro"
+import HeadingThree from "@/atoms/headings/three/uppercase/index.astro"
+import Picture from "@/atoms/picture/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    alternative_text,
+    CDN,
+    PROJECT,
+    source,
+    title
+
+} = Astro.props
+
+---
+<div class="space-y-6">
+    <div class="w-full aspect-video bg-zinc-200">
+        <Picture
+            alternative_text={ alternative_text }
+            CDN={ CDN }
+            PROJECT={ PROJECT }
+            source={ source }
+        />
+    </div>
+    <div class="md:h-40">
+        <HeadingThree>{ title }</HeadingThree>
+    </div>
+    <ArrowAnchor>Read More</ArrowAnchor>
+</div>

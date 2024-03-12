@@ -1,36 +1,50 @@
+// IMPORTS ATOMS
+import Link from "@/atoms/links/jsx/index.jsx"
+import PictureInternal from "@/atoms/picture/internal/jsx/index.jsx"
+import PictureInternalContain from "@/atoms/picture/internal/jsx/contain/index.jsx"
+
+// IMPORTS FRAMER MOTION
 import { motion, AnimatePresence } from "framer-motion"
+
+// IMPORTS REACT
 import { useState } from "react"
 
 const MobileHeader = () => {
 
     const [ isOpen, updateOpen ] = useState( false )
+
     return (
         <header className="md:hidden bg-background px-6 py-6 z-20 w-full">
             <div className="flex justify-between items-center z-20">
-                <a href="/">
-                    <img
-                        src="/logo/gl_logo.svg"
-                        alt="logo"
-                        className="w-28 object-cover"
-                    />
-                </a>
+                <Link href="/" aria_label="gorilla logic logo">
+                    <div className="w-28 object-cover">
+                        <PictureInternal
+                            alternative_text="gorilla logic logo"
+                            source="/logo/gl_logo.svg"
+                        />
+                    </div>
+                </Link>
                 <div onClick={ () => updateOpen( !isOpen ) }>
                     {
 
                         isOpen &&
-                        <img
-                            src="/icons/close.svg"
-                            className="w-6 aspect-square"
-                        />
+                        <div className="w-6 aspect-square">
+                            <PictureInternalContain
+                                alternative_text="close icon"
+                                source="/icons/close.svg"
+                            />
+                        </div>
 
                     }
                     {
 
                         !isOpen &&
-                        <img
-                            src="/icons/menu.svg"
-                            className="w-6 aspect-square"
-                        />
+                        <div className="w-6 aspect-square">
+                            <PictureInternalContain
+                                alternative_text="menu icon"
+                                src="/icons/menu.svg"
+                            />
+                        </div>
 
                     }
                 </div>
@@ -59,8 +73,6 @@ const MobileHeader = () => {
                                 <li className="text-white font-open_sans font-thin">Blog and Resources</li>
                                 <li className="text-white font-open_sans font-thin">Contact Us</li>
                             </ul>
-                            <div>
-                            </div>
                         </div>
                     </motion.div>
 

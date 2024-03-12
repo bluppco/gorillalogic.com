@@ -1,11 +1,12 @@
 ---
+
 // IMPORTS ASTRO LAYOUTS
-import Container from "../layouts/Container.astro"
+import Container from "@/layouts/container/index.astro"
 
-// IMPORTS CONTENT
-import { frontmatter as benchmarking } from "../content/benchmarking/home.mdx"
+// IMPORTS BENCHMARKING FROM CONTENT
+import { frontmatter as benchmarking } from "@/content/benchmarking/home.mdx"
+
 ---
-
 <section>
     <Container>
         { benchmarking.page }
