@@ -37,13 +37,10 @@ module.exports = {
 				"2xl": "1400px",
 			},
 		},
-		// screens: {
-		// 	'mac': '1440px',
-		// },
 		extend: {
-			// screens: {
-			// 	'mac': '1440px',
-			// },
+			screens: {
+				'mac': '1440px',
+			},
 			fontFamily: {
 				'open_sans': ["Open Sans","sans-serif"],
 				'lora': ["Lora","serif"]
@@ -54,7 +51,8 @@ module.exports = {
 				"gl_blue": "#225fc9",
 				"gl_light_blue": "#3b82f680",
 				"gl_sky_blue": "#79bcfc",
-				"gl_dark_blue": "#061B36"
+				"gl_dark_blue": "#061B36",
+				"gl_cream": "#f2f1ee"
 			},
 
 			keyframes: {

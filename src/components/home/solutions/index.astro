@@ -14,16 +14,21 @@ import HeadingTwo from "@/atoms/headings/two/white/index.astro"
 const { data } = Astro.props
 
 ---
-<section class="bg-gl_dark_blue py-44">
+<section class="bg-gl_dark_blue py-14">
     <Container>
         <section class="space-y-14">
             <div class="space-y-4">
                 <HeadingTwo>{ data.title }</HeadingTwo>
                 <p class="text-xl font-open_sans font-light text-white">{ data.description }</p>
             </div>
-            <Carousel
-                client:load
-            />
+            {
+
+                false &&
+                <Carousel
+                    client:load
+                />
+
+            }
             <div class="flex justify-center">
                 <Button>{ data.button_title }</Button>
             </div>

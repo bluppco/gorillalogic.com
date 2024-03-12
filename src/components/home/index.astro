@@ -7,7 +7,7 @@ import HeaderBanner from "@/components/common/header-banner/index.astro"
 
 // IMPORTS ASTRO COMPONENTS
 import CaseStudies from "@/components/home/case-studies/index.astro"
-import Hero from "@/components/home/hero/Hero.astro"
+import Hero from "@/components/home/hero/index.astro"
 import LatestInsights from "@/components/home/latest-insights/index.astro"
 import Locations from "@/components/home/locations/index.astro"
 import ReadWhy from "@/components/home/read-why/index.astro"
@@ -29,7 +29,7 @@ const {
 } = Astro.props
 
 ---
-<section class="h-screen max-h-screen">
+<section class="h-screen md:max-h-screen 2xl:h-[800px] overflow-hidden">
     <HeaderBanner
         ENVIRONMENT={ ENVIRONMENT }
     />
@@ -43,7 +43,7 @@ const {
 <Solutions
     data={ home_data.solutions }
 />
-<section class="bg-no-repeat" style=`background-image: url(${ "@/images/globe.svg" })`>
+<section class="bg-no-repeat" style=`background-image: url(${ "/images/globe.svg" })`>
     <Locations
         CDN={ CDN }
         data={ locations }

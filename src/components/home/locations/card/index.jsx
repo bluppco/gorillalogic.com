@@ -24,7 +24,7 @@ const LocationCard = ( props ) => {
                     video_source.map( ( value, index ) => {
 
                         return(
-                            <div key={ "locations-video" + index }>
+                            <div key={ "locations-video" + index } className="h-full">
                                 <Video cy="locations-video">
                                     <source src={ CDN + PROJECT + "/" + value.file } type="video/mp4" />
                                 </Video>

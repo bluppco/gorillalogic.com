@@ -1,7 +1,7 @@
 ---
 
 // IMPORTS ASTRO ATOMS
-import Picture from "@/atoms/picture/index.astro"
+import PictureContain from "@/atoms/picture/contain/index.astro"
 
 // GET ASTRO PROPS
 const {
@@ -24,7 +24,7 @@ const {
                         <div class="flex gap-8 items-center border-r border-black px-14 md:py-2">
                             <p class="md:text-xl text-black select-none font-open_sans font-semibold">{ value.title }</p>
                             <div class="w-28 aspect-video">
-                                <Picture
+                                <PictureContain
                                     alternative_text={ value.title }
                                     CDN={ CDN }
                                     PROJECT={ PROJECT }
@@ -48,7 +48,7 @@ const {
                         <div class="flex gap-8 items-center border-r border-black px-14 md:py-2">
                             <p class="md:text-xl text-black select-none font-open_sans font-semibold">{ value.title }</p>
                             <div class="w-28 aspect-video">
-                                <Picture
+                                <PictureContain
                                     alternative_text={ value.title }
                                     CDN={ CDN }
                                     PROJECT={ PROJECT }

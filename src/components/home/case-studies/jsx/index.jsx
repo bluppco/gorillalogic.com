@@ -50,12 +50,12 @@ const CaseStudies = ( props ) => {
     }
 
     return(
-        <section className="py-20 bg-neutral-100">
+        <section className="py-20 bg-gl_cream">
             <Container>
                 <div>
                     <motion.div
                         animate={ controls }
-                        initial="hidden"
+                        initial="visible"
                         variants={ slidingVariant }
                     >
                         <div className="md:space-y-6" ref={ ref }>
