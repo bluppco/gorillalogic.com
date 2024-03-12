@@ -4,6 +4,6 @@
 
 .markdown p {
 
-    @apply font-open_sans md:text-xl !leading-relaxed !important ;
+    @apply font-open_sans text-xl !leading-relaxed !important ;
 
 }

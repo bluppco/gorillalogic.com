@@ -1,0 +1,101 @@
+---
+
+// GET ASTRO PROPS
+const { header_data } = Astro.props
+
+---
+<ul class="flex items-center">
+    {
+
+        header_data.map( ( item ) => {
+
+            return (
+                <li class="text-white hover:text-gl_sky_blue font-open_sans font-thin hover:cursor-pointer relative group p-4">
+                    <a class="group-hover:text-brown" aria-label={"explore " + item.data.title }>{ item.data.title }</a>
+                    {
+
+                        item.data.has_dropdown && item.data.title==="Services" &&
+                        <div class="hidden group-hover:block group-hover:flex-col absolute p-10 bg-background shadow-lg left-0 z-20 top-14 w-[670px] gap-2 custom-shadow">
+                            <div class="grid grid-cols-2 gap-x-20">
+                                <div>
+                                    <div class="py-2">
+                                        <p class="text-white text-sm font-open_sans font-semibold uppercase tracking-widest">{ item.data.column_one_title }</p>
+                                    </div>
+                                    {
+
+                                        item.data.column_one_items.map( ( sub_item ) => {
+
+                                            return(
+                                                <div class="py-2">
+                                                    <a
+                                                        class="text-dark_grey hover:text-brown"
+                                                        aria-label={ "explore" + sub_item.title }
+                                                    >
+                                                        <div class="text-sm text-white hover:text-gl_sky_blue font-open_sans font-thin">{ sub_item.title }</div>
+                                                    </a>
+                                                </div>
+                                            )
+
+                                        })
+
+                                    }
+                                </div>
+                                <div>
+                                    <div class="py-2">
+                                        <p class="text-white text-sm font-open_sans font-semibold uppercase tracking-widest">{ item.data.column_two_title }</p>
+                                    </div>
+                                    {
+
+                                        item.data.column_two_items.map( ( sub_item ) => {
+
+                                            return(
+                                                <div class="py-2">
+                                                    <a
+                                                        class="text-dark_grey hover:text-brown"
+                                                        aria-label={ "explore" + sub_item.title }
+                                                    >
+                                                        <div class="text-sm text-white hover:text-gl_sky_blue font-open_sans font-thin">{ sub_item.title }</div>
+                                                    </a>
+                                                </div>
+                                            )
+
+                                        })
+
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    {
+
+                        item.data.has_dropdown && item.data.title!="Services" &&
+                        <div class="hidden group-hover:block group-hover:flex-col absolute p-10 bg-background shadow-lg left-0 z-20 top-14 w-80 gap-2 custom-shadow">
+                            <div class="flex flex-col">
+                                {
+
+                                    item.data.items.map( ( sub_item ) => {
+
+                                        return(
+                                            <div class="py-2">
+                                                <a
+                                                    class="text-dark_grey hover:text-brown"
+                                                    aria-label={ "explore" + sub_item.title }
+                                                >
+                                                    <div class="text-sm text-white hover:text-gl_sky_blue font-open_sans font-thin">{ sub_item.title }</div>
+                                                </a>
+                                            </div>
+                                        )
+
+                                    })
+
+                                }
+                            </div>
+                        </div>
+                    }
+                </li>
+            )
+
+        })
+
+    }
+</ul>

@@ -1,0 +1,67 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import PictureContain from "@/atoms/picture/contain/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    CDN,
+    data,
+    PROJECT
+
+} = Astro.props
+
+---
+<section class="bg-gl_sky_blue">
+    <div class="relative flex overflow-x-hidden">
+        <div class="flex items-center animate-marquee hover:[animation-play-state:paused] whitespace-nowrap">
+            {
+
+                data.map( ( value ) => {
+
+                    return (
+                        <div class="flex gap-8 items-center border-r border-black px-14 md:py-2">
+                            <p class="md:text-xl text-black select-none font-open_sans font-semibold">{ value.title }</p>
+                            <div class="w-28 aspect-video">
+                                <PictureContain
+                                    alternative_text={ value.title }
+                                    CDN={ CDN }
+                                    PROJECT={ PROJECT }
+                                    source={ value.cover }
+                                />
+                            </div>
+                        </div>
+
+                    )
+
+                })
+
+            }
+        </div>
+        <div class="flex items-center absolute top-0 animate-marquee2 whitespace-nowrap">
+            {
+
+                data.map( ( value ) => {
+
+                    return (
+                        <div class="flex gap-8 items-center border-r border-black px-14 md:py-2">
+                            <p class="md:text-xl text-black select-none font-open_sans font-semibold">{ value.title }</p>
+                            <div class="w-28 aspect-video">
+                                <PictureContain
+                                    alternative_text={ value.title }
+                                    CDN={ CDN }
+                                    PROJECT={ PROJECT }
+                                    source={ value.cover }
+                                />
+                            </div>
+                        </div>
+
+                    )
+
+                })
+
+            }
+        </div>
+    </div>
+</section>

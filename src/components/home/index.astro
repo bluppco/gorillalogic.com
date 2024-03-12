@@ -1,0 +1,74 @@
+---
+
+// IMPORTS COMMON ASTRO COMPONENTS
+import Footer from "@/components/common/footer/index.astro"
+import Header from "@/components/common/header/index.astro"
+import HeaderBanner from "@/components/common/header-banner/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import CaseStudies from "@/components/home/case-studies/index.astro"
+import Hero from "@/components/home/hero/index.astro"
+import LatestInsights from "@/components/home/latest-insights/index.astro"
+import Locations from "@/components/home/locations/index.astro"
+import ReadWhy from "@/components/home/read-why/index.astro"
+import Solutions from "@/components/home/solutions/index.astro"
+import Testimonials from "@/components/home/testimonials/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    blogs,
+    CDN,
+    ENVIRONMENT,
+    home_data,
+    locations,
+    PROJECT,
+    studies,
+    testimonials
+
+} = Astro.props
+
+---
+<section class="h-screen md:max-h-screen 2xl:h-[800px] overflow-hidden">
+    <HeaderBanner
+        ENVIRONMENT={ ENVIRONMENT }
+    />
+    <Header />
+    <Hero
+        CDN={ CDN }
+        data={ home_data.hero }
+        PROJECT={ PROJECT }
+    />
+</section>
+<Solutions
+    data={ home_data.solutions }
+/>
+<section class="bg-no-repeat" style=`background-image: url(${ "/images/globe.svg" })`>
+    <Locations
+        CDN={ CDN }
+        data={ home_data.locations }
+        locations={ locations }
+        PROJECT={ PROJECT }
+    />
+    <ReadWhy
+        data={ home_data.read_why }
+    />
+</section>
+<CaseStudies
+    case_study={ home_data.case_studies }
+    CDN={ CDN }
+    data={ studies }
+    PROJECT={ PROJECT }
+/>
+<LatestInsights
+    CDN={ CDN }
+    data={ blogs }
+    insights={ home_data.latest_insights }
+    PROJECT={ PROJECT }
+/>
+<Testimonials
+    CDN={ CDN }
+    data={ testimonials }
+    PROJECT={ PROJECT }
+/>
+<Footer />

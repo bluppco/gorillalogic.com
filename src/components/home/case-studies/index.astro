@@ -1,0 +1,22 @@
+---
+
+// IMPORTS JSX COMPONENTS
+import CaseStudies from "@/components/home/case-studies/jsx/index.jsx"
+
+// GET ASTRO PROPS
+const {
+
+    case_study,
+    CDN,
+    data,
+    PROJECT
+
+} = Astro.props
+
+---
+<CaseStudies
+    case_study={ case_study }
+    CDN={ CDN }
+    data={ data }
+    PROJECT={ PROJECT }
+/>
