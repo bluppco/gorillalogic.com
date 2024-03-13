@@ -104,6 +104,7 @@ module.exports = {
 				"marquee2": 'marquee2 40s linear infinite',
 				"sliding": 'sliding 10s infinite',
 				"slow_sliding": 'slow_sliding 11s infinite',
+				"bounce": "bounce 2s infinite"
 			},
 		},
 	},

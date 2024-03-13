@@ -58,7 +58,7 @@ const CaseStudies = ( props ) => {
                         initial="visible"
                         variants={ slidingVariant }
                     >
-                        <div className="md:space-y-6" ref={ ref }>
+                        <div className="space-y-4 md:space-y-6" ref={ ref }>
                             <HeadingThreeOpenSans>{ case_study.title }</HeadingThreeOpenSans>
                             <HeadingTwo>{ case_study.sub_title }</HeadingTwo>
                             <ParagraphXl>{ case_study.description }</ParagraphXl>
@@ -89,7 +89,7 @@ const CaseStudies = ( props ) => {
 
                         }
                     </div>
-                    <div className="flex justify-center">
+                    <div className="flex md:justify-center">
                         <Button>View more successes</Button>
                     </div>
                 </div>

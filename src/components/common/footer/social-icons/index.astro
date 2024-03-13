@@ -1,27 +1,35 @@
 ---
-// IMPORT ASTRO COMPONENTS
-import SocialIcon from "./item/index.astro"
----
-<div class="flex gap-4 pt-6 md:pt-0">
-    <SocialIcon
-        src="/icons/facebook.svg"
-        alt=""
-        href="https://www.facebook.com/gorillalogic"
-    />
-    <SocialIcon
-        src="/icons/x.svg"
-        alt=""
-        href="https://twitter.com/gorillalogic/"
-    />
-    <SocialIcon
-        src="/icons/linkedin.svg"
-        alt=""
-        href="https://www.linkedin.com/company/gorillalogic/"
-    />
-    <SocialIcon
-        src="/icons/instagram.svg"
-        alt=""
-        href="https://www.instagram.com/gorilla_logic/"
-    />
 
+// IMPORTS ASTRO COMPONENTS
+import SocialIcon from "@/atoms/footer/social-icons/item/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import Link from "@/atoms/links/target-blank/index.astro"
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+---
+<div class="flex gap-4 items-center pt-6 md:pt-0">
+    <SocialIcon
+        alternative_text="facebook icon"
+        href="https://www.facebook.com/gorillalogic"
+        source="/icons/facebook.svg"
+    />
+    <Link href="https://twitter.com/gorillalogic/" aria_label="x icon">
+        <div class="size-5">
+            <PictureInternalContain
+                alternative_text="x icon"
+                source="/icons/x.svg"
+            />
+        </div>
+    </Link>
+    <SocialIcon
+        alternative_text="linkedin icon"
+        href="https://www.linkedin.com/company/gorillalogic/"
+        source="/icons/linkedin.svg"
+    />
+    <SocialIcon
+        alternative_text="instagram icon"
+        href="https://www.instagram.com/gorilla_logic/"
+        source="/icons/instagram.svg"
+    />
 </div>

@@ -14,7 +14,7 @@ const MobileHeader = () => {
     const [ isOpen, updateOpen ] = useState( false )
 
     return (
-        <header className="md:hidden bg-background px-6 py-6 z-20 w-full">
+        <header className="md:hidden bg-background fixed top-16 px-4 py-6 z-20 w-full">
             <div className="flex justify-between items-center z-20">
                 <Link href="/" aria_label="gorilla logic logo">
                     <div className="w-28 object-cover">
@@ -42,7 +42,7 @@ const MobileHeader = () => {
                         <div className="w-6 aspect-square">
                             <PictureInternalContain
                                 alternative_text="menu icon"
-                                src="/icons/menu.svg"
+                                source="/icons/menu.svg"
                             />
                         </div>
 
