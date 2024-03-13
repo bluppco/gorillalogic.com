@@ -19,12 +19,12 @@ const Hero = ( props ) => {
     } = props
 
     return(
-        <section className="md:mt-28 py-10 md:pt-32 md:pb-48 h-full w-full relative bg-bottom bg-cover overflow-hidden bg-no-repeat" style={{ backgroundImage: `url(${CDN + PROJECT + "/" + data.cover + "?quality=80"})` }}>
+        <section className="mt-36 md:mt-28 py-10 md:pt-32 md:pb-48 h-[580px] w-full relative bg-bottom bg-cover overflow-hidden bg-no-repeat" style={{ backgroundImage: `url(${CDN + PROJECT + "/" + data.cover + "?quality=80"})` }}>
             <Container>
                 <section className="relative z-10 flex flex-col justify-between h-full">
-                    <div className="w-[80%]">
-                        <h1 className="text-white text-4xl md:text-6xl font-lora">Digital engineering challenges?</h1>
-                        <div className="pt-2">
+                    <div className="md:w-[80%]">
+                        <h1 className="text-white text-4xl md:text-6xl font-lora leading-normal">Digital engineering challenges?</h1>
+                        <div className="pt-4 md:pt-2">
                             <span className="text-white text-6xl md:text-8xl font-lora">{ data.sub_title } <span className="text-gl_sky_blue italic">solutions.</span></span>
                         </div>
                         <div className="pt-8">
