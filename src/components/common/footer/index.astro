@@ -1,131 +1,61 @@
 ---
-// IMPORT ASTRO LAYOUTS
-import Container from '../../../layouts/container/index.astro'
 
-// IMPORT ASTRO COMPONENTS
-import SocialIcons from './social-icons/index.astro'
+// IMPORTS ASTRO LAYOUTS
+import Container from '@/layouts/container/index.astro'
 
+// IMPORTS ASTRO COMPONENTS
+import ColumnFour from '@/components/common/footer/column-four/index.astro'
+import ColumnOne from '@/components/common/footer/column-one/index.astro'
+import ColumnThree from '@/components/common/footer/column-three/index.astro'
+import ColumnTwo from '@/components/common/footer/column-two/index.astro'
+import SocialIcons from '@/components/common/footer/social-icons/index.astro'
+
+// IMPORTS ASTRO ATOMS
+import Link from "@/atoms/links/index.astro"
+import PictureInternalContain from '@/atoms/picture/internal/contain/index.astro'
+
+// IMPORTS ASTRO COLLECTION
 import { getCollection } from 'astro:content'
 
+// IMPORTS FOOTER COLUMN ONE COLLECTION
 let footer_column_one = await getCollection('footer-column-one')
-footer_column_one = footer_column_one.sort((a, b) => a.data.order - b.data.order)
-footer_column_one = footer_column_one.filter( ( item ) => item.data.live )
+footer_column_one = footer_column_one.sort((a, b) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
 
+// IMPORTS FOOTER COLUMN TWO COLLECTION
 let footer_column_two = await getCollection('footer-column-two')
-footer_column_two = footer_column_two.sort((a, b) => a.data.order - b.data.order)
-footer_column_two = footer_column_two.filter( ( item ) => item.data.live )
+footer_column_two = footer_column_two.sort((a, b) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
 
+// IMPORTS FOOTER COLUMN THREE COLLECTION
 let footer_column_three = await getCollection('footer-column-three')
-footer_column_three = footer_column_three.sort((a, b) => a.data.order - b.data.order)
-footer_column_three = footer_column_three.filter( ( item ) => item.data.live )
+footer_column_three = footer_column_three.sort((a, b) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
 
-import { frontmatter as footerColumnOne } from "../../../content/footer-titles/title-one.md"
-import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/title-two.md"
+// IMPORTS FOOTER TITLES
+import { frontmatter as footerColumnOne } from "@/content/footer-titles/title-one.md"
+import { frontmatter as footerColumnTwo } from "@/content/footer-titles/title-two.md"
+
 ---
 <footer class="bg-background z-30 relative">
     <section class="py-20 border-b border-white/40">
         <Container>
             <div class="w-40 aspect-video pb-10">
-                <img
-                    src="/logo/gl_logo.svg"
-                    alt=""
-                    class="w-40 aspect-video"
+                <PictureInternalContain
+                    alternative_text="gorilla logic logo"
+                    source="/logo/gl_logo.svg"
                 />
             </div>
             <div class="grid grid-cols-2 md:grid-cols-6 gap-10">
-                <div class="flex flex-col col-span-2 pr-40 md:pr-10">
-                    <div class="pb-2">
-                        <p class="font-open_sans font-semibold text-white text-xs uppercase tracking-widest">{ footerColumnOne.title }</p>
-                    </div>
-                    {
-
-                        footer_column_one.map( ( item ) => {
-
-                            return (
-                                <div class="flex items-center gap-4">
-                                    <ul class="py-1">
-                                        <li class="text-white font-lora text-3xl md:text-4xl">
-                                            { item.data.title }
-                                        </li>
-                                    </ul>
-                                </div>
-                            )
-
-                        })
-
-                    }
-                </div>
-                <div class="flex flex-col">
-                    <div class="pb-2">
-                        <p class="font-open_sans font-semibold text-white text-xs uppercase tracking-widest">{ footerColumnTwo.title }</p>
-                    </div>
-                    {
-
-                        footer_column_two.map( ( item ) => {
-
-                            return (
-                                <div class="flex items-center gap-4">
-                                    <ul class="py-1">
-                                        <li class="text-white hover:text-gl_sky_blue md:text-xl font-open_sans font-light">
-                                            <a href={ item.data.link }>
-                                                { item.data.title }
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            )
-
-                        })
-
-                    }
-                </div>
-                <div class="flex flex-col pt-8">
-                    {
-
-                        footer_column_three.map( ( item ) => {
-
-                            return (
-                                <div class="flex items-center gap-4">
-                                    <ul class="py-1">
-                                        <li class="text-white hover:text-gl_sky_blue md:text-xl font-open_sans font-light">
-                                            <a href={ item.data.link }>
-                                                <p>{ item.data.title }</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            )
-
-                        })
-
-                    }
-                </div>
-                <div class="col-span-2 pt-10">
-                    <button class="relative z-10 bg-gl_blue hover:bg-gl_sky_blue h-16 px-6 rounded-full text-white hover:text-black text-lg font-open_sans flex gap-4 justify-center items-center group">
-                        Contact Us
-                        <div class="border rounded-full p-3 group-hover:hidden">
-                            <img
-                                src="/icons/white_right_arrow.svg"
-                                alt=""
-                                class="size-4"
-                            />
-                        </div>
-                        <div class="border rounded-full p-3 hidden group-hover:border-black group-hover:block">
-                            <img
-                                src="/icons/black_right_arrow.svg"
-                                alt=""
-                                class="size-4"
-                            />
-                        </div>
-                    </button>
-                    <div class="flex justify-end absolute bottom-[150px] md:bottom-[97px] right-0 size-60 md:size-72">
-                        <img
-                            src="/images/gorilla_footer.svg"
-                            alt=""
-                            class="w-full h-full"
-                        />
-                    </div>
-                </div>
+                <ColumnOne
+                    data={ footer_column_one }
+                    title={ footerColumnOne.title }
+                />
+                <ColumnTwo
+                    data={ footer_column_two }
+                    title={ footerColumnTwo.title }
+                />
+                <ColumnThree
+                    data={ footer_column_three }
+                />
+                <ColumnFour />
             </div>
         </Container>
     </section>
@@ -133,12 +63,16 @@ import { frontmatter as footerColumnTwo } from "../../../content/footer-titles/t
         <section class="flex flex-col md:flex-row md:items-center justify-between py-6 md:h-24">
             <div class="flex flex-col md:flex-row gap-1 md:gap-10">
                 <div class="flex gap-4">
-                    <p class="text-white">&copy; { new Date().getFullYear() } Gorilla Logic LLC</p>
-                    <p class="text-white hidden md:block">HQ Address: 8001 Arista Pl, Ste 600, Broomfield, CO 80021</p>
+                    <p class="text-sm text-white">&copy; { new Date().getFullYear() } Gorilla Logic LLC</p>
+                    <p class="text-sm text-white hidden md:block">HQ Address: 8001 Arista Pl, Ste 600, Broomfield, CO 80021</p>
                 </div>
                 <div class="flex gap-4">
-                    <p class="text-white hover:text-gl_sky_blue underline underline-offset-4 hover:cursor-pointer">Cookie Policy</p>
-                    <p class="text-white hover:text-gl_sky_blue underline underline-offset-4 hover:cursor-pointer">Privacy Policy</p>
+                    <Link href="/cookie-policy" aria_label="cookie policy">
+                        <span class="text-sm text-white hover:text-gl_sky_blue underline underline-offset-4 hover:cursor-pointer">Cookie Policy</span>
+                    </Link>
+                    <Link href="/privacy-policy" aria_label="privacy policy">
+                        <span class="text-sm text-white hover:text-gl_sky_blue underline underline-offset-4 hover:cursor-pointer">Privacy Policy</span>
+                    </Link>
                 </div>
             </div>
             <!-- SOCIAL ICONS -->
