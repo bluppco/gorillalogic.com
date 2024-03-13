@@ -98,7 +98,7 @@ const CaseStudyCard = ( props ) => {
             <motion.div
                 animate={ controls }
                 className="space-y-6" ref={ ref }
-                initial="visible"
+                initial="hidden"
                 variants={ slidingVariant }
             >
                 <HeadingThree>{ title }</HeadingThree>
@@ -107,7 +107,7 @@ const CaseStudyCard = ( props ) => {
             <motion.div
                 animate={ controls }
                 className="space-y-6" ref={ ref }
-                initial="visible"
+                initial="hidden"
                 variants={ delayedSlidingVariant }
             >
                 <ArrowAnchor>{ anchor_text }</ArrowAnchor>
