@@ -14,7 +14,7 @@ const ArrowAnchor = ( props ) => {
 
     return(
         <Link href={ href } aria_label={ aria_label }>
-            <div className="flex gap-2 items-center group hover:cursor-pointer">
+            <div className="flex gap-2 items-center group hover:cursor-pointer hover:underline">
                 <span className="uppercase text-lg text-gl_blue hover:text-black font-open_sans font-semibold tracking-widest">{ props.children }</span>
                 <div className="size-6 group-hover:hidden">
                     <Picture
