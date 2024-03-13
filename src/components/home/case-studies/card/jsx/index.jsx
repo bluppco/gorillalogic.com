@@ -65,8 +65,8 @@ const CaseStudyCard = ( props ) => {
                         />
                     </div>
                     <div className="absolute my-rotate-y-180 backface-hidden w-full h-full bg-blue-100 overflow-hidden">
-                        <div className="flex flex-col gap-10 p-10 md:p-20">
-                            <div className="flex gap-2">
+                        <div className="flex flex-col gap-10 p-4 md:p-20">
+                            <div className="flex md:gap-2 items-center">
                                 <div className="h-8 aspect-video">
                                     <img
                                         alt={ alternative_text }
@@ -74,7 +74,7 @@ const CaseStudyCard = ( props ) => {
                                         src="/icons/primary_tech.svg"
                                     />
                                 </div>
-                                <p className="font-open_sans font-semibold text-xl uppercase tracking-widest">Primary technology</p>
+                                <p className="font-open_sans font-semibold text-lg md:text-xl uppercase tracking-widest">Primary technology</p>
                             </div>
                             <div className="flex flex-wrap gap-x-8 gap-y-2">
                                 {
@@ -83,7 +83,7 @@ const CaseStudyCard = ( props ) => {
 
                                         return(
                                             <div className="pl-2" key={ "primary-technology" + index }>
-                                                <li className="font-open_sans text-2xl marker:text-gl_blue">{ value }</li>
+                                                <li className="font-open_sans md:text-2xl marker:text-gl_blue">{ value }</li>
                                             </div>
                                         )
 

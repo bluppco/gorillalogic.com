@@ -1,0 +1,25 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+---
+<button class="relative z-10 bg-gl_blue hover:bg-gl_sky_blue h-16 px-6 rounded-full text-white hover:text-black text-lg font-open_sans flex gap-4 justify-center items-center group">
+    <slot/>
+    <div class="border rounded-full p-3 group-hover:hidden">
+        <div class="size-4">
+            <PictureInternalContain
+                alternative_text="white right arrow icon"
+                source="/icons/white_right_arrow.svg"
+            />
+        </div>
+    </div>
+    <div class="border rounded-full p-3 hidden group-hover:border-black group-hover:block">
+        <div class="size-4">
+            <PictureInternalContain
+                alternative_text="black right arrow icon"
+                source="/icons/black_right_arrow.svg"
+            />
+        </div>
+    </div>
+</button>

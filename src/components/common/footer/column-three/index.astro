@@ -1,0 +1,30 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import Link from "@/atoms/links/index.astro"
+
+// GET ASTRO PROPS
+const { data } = Astro.props
+
+---
+<div class="flex flex-col pt-8">
+    {
+
+        data.map( ( item ) => {
+
+            return (
+                <div class="flex items-center gap-4">
+                    <ul class="py-1">
+                        <li class="text-white hover:text-gl_sky_blue md:text-xl font-open_sans font-light">
+                            <Link href={ item.data.link } aria_label={ item.data.title }>
+                                { item.data.title }
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+            )
+
+        })
+
+    }
+</div>

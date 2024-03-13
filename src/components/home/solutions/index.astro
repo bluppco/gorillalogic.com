@@ -14,9 +14,9 @@ import HeadingTwo from "@/atoms/headings/two/white/index.astro"
 const { data } = Astro.props
 
 ---
-<section class="bg-gl_dark_blue py-14">
+<section class="bg-gl_dark_blue py-14" id="solutions">
     <Container>
-        <section class="space-y-14">
+        <section class="space-y-4 md:space-y-14">
             <div class="space-y-4">
                 <HeadingTwo>{ data.title }</HeadingTwo>
                 <p class="text-xl font-open_sans font-light text-white">{ data.description }</p>
