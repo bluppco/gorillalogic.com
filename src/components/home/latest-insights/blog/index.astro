@@ -3,12 +3,15 @@
 // IMPORT ASTRO ATOMS
 import ArrowAnchor from "@/atoms/arrow-anchor/index.astro"
 import HeadingThree from "@/atoms/headings/three/uppercase/index.astro"
+import Link from "@/atoms/links/index.astro"
 import Picture from "@/atoms/picture/index.astro"
 
 // GET ASTRO PROPS
 const {
 
     alternative_text,
+    button_link,
+    button_title,
     CDN,
     PROJECT,
     source,
@@ -29,5 +32,7 @@ const {
     <div class="md:h-40">
         <HeadingThree>{ title }</HeadingThree>
     </div>
-    <ArrowAnchor>Read More</ArrowAnchor>
+    <Link href={ button_link } aria_label={ button_title }>
+        <ArrowAnchor>{ button_title }</ArrowAnchor>
+    </Link>
 </div>

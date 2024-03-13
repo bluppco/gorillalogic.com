@@ -10,6 +10,7 @@ import Blog from "@/components/home/latest-insights/blog/index.astro"
 import Button from "@/atoms/buttons/secondary/index.astro"
 import HeadingThree from "@/atoms/headings/three/open-sans/uppercase/index.astro"
 import HeadingTwo from "@/atoms/headings/two/index.astro"
+import Link from "@/atoms/links/index.astro"
 
 // GET ASTRO PROPS
 const {
@@ -36,6 +37,8 @@ const {
 					return(
 						<Blog
 							alternative_text={ item.title }
+							button_link={ item.button_link }
+							button_title={ item.button_title }
 							CDN={ CDN }
 							PROJECT={ PROJECT }
 							source={ item.cover }
@@ -48,7 +51,9 @@ const {
 			}
 		</div>
 		<div class="flex md:justify-center">
-			<Button>Explore more insights</Button>
+			<Link href={ insights.button_link } aria_label={ insights.button_title }>
+				<Button>{ insights.button_title }</Button>
+			</Link>
 		</div>
 	</section>
 </Container>

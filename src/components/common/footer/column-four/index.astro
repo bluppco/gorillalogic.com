@@ -2,11 +2,14 @@
 
 // IMPORTS ASTRO ATOMS
 import ButtonArrow from "@/atoms/buttons/arrow/index.astro"
+import Link from "@/atoms/links/index.astro"
 import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
 
 ---
 <div class="col-span-2 pt-10">
-    <ButtonArrow>Contact Us</ButtonArrow>
+    <Link href="/contact-us" aria_label="Contact Us">
+        <ButtonArrow>Contact Us</ButtonArrow>
+    </Link>
     <div class="flex justify-end absolute bottom-[145px] md:bottom-[97px] -right-2 size-60 md:size-72">
         <PictureInternalContain
             alternative_text="gorilla"

@@ -43,16 +43,22 @@ const Locations = ( props ) => {
         hidden: { opacity: 0, y: 200 }
 
     }
+    const delaySlidingVariant = {
+
+        visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.4 } },
+        hidden: { opacity: 0, y: 200 }
+
+    }
 
     return(
-        <motion.div
-            animate={ controls }
-            initial="hidden"
-            variants={ slidingVariant }
-        >
-            <Container>
-                <section>
-                    <section className="space-y-6 pt-20">
+        <Container>
+            <section>
+                <motion.div
+                    animate={ controls }
+                    initial="hidden"
+                    variants={ slidingVariant }
+                >
+                    <section className="space-y-6 pt-20" ref={ ref }>
                         <div className="flex gap-2 items-center justify-center">
                             <div className="size-6">
                                 <PictureInternalContain
@@ -64,6 +70,12 @@ const Locations = ( props ) => {
                         </div>
                         <h2 className="font-lora text-center text-5xl">Innovation <span className="text-gl_blue">without</span> borders</h2>
                     </section>
+                </motion.div>
+                <motion.div
+                    animate={ controls }
+                    initial="hidden"
+                    variants={ delaySlidingVariant }
+                >
                     <section className="grid grid-cols-2 md:grid-cols-4 pb-20 md:pb-32 pt-10 md:pt-32" ref={ ref }>
                         {
 
@@ -87,9 +99,9 @@ const Locations = ( props ) => {
 
                         }
                     </section>
-                </section>
-            </Container>
-        </motion.div>
+                </motion.div>
+            </section>
+        </Container>
     )
 
 }

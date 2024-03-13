@@ -19,7 +19,7 @@ const Hero = ( props ) => {
     } = props
 
     return(
-        <section className="mt-36 md:mt-28 py-10 md:pt-32 md:pb-48 h-[580px] w-full relative bg-bottom bg-cover overflow-hidden bg-no-repeat" style={{ backgroundImage: `url(${CDN + PROJECT + "/" + data.cover + "?quality=80"})` }}>
+        <section className="relative mt-36 md:mt-28 py-10 md:pt-32 md:pb-48 h-full w-full bg-bottom bg-cover overflow-hidden bg-no-repeat" style={{ backgroundImage: `url(${CDN + PROJECT + "/" + data.cover + "?quality=80"})` }}>
             <Container>
                 <section className="relative z-10 flex flex-col justify-between h-full">
                     <div className="md:w-[80%]">
@@ -37,14 +37,16 @@ const Hero = ( props ) => {
                 </section>
             </Container>
             <section className="absolute z-0 top-0 left h-full w-full" style={{ background: "linear-gradient(180deg, rgba(6,27,54,.9) 31.04%, rgba(6,27,54,.2) 115.52%)" }} />
-            <Link to="solutions" smooth={ true } offset={ -115 }>
-                <div className="animate-bounce size-16 fixed bottom-5 right-16 z-30">
-                    <PictureInternalContain
-                        alternative_text="scroll icon"
-                        source="/icons/scroll-icon.svg"
-                    />
-                </div>
-            </Link>
+            <div className="relative pt-24">
+                <Link to="solutions" smooth={ true } offset={ -115 }>
+                    <div className="animate-bounce size-16 absolute bottom-5 right-16 z-30">
+                        <PictureInternalContain
+                            alternative_text="scroll icon"
+                            source="/icons/scroll-icon.svg"
+                        />
+                    </div>
+                </Link>
+            </div>
         </section>
     )
 
