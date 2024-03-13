@@ -51,7 +51,7 @@ const Locations = ( props ) => {
             variants={ slidingVariant }
         >
             <Container>
-                <section>
+                <section ref={ ref }>
                     <section className="space-y-6 pt-20">
                         <div className="flex gap-2 items-center justify-center">
                             <div className="size-6">
@@ -64,7 +64,7 @@ const Locations = ( props ) => {
                         </div>
                         <h2 className="font-lora text-center text-5xl">Innovation <span className="text-gl_blue">without</span> borders</h2>
                     </section>
-                    <section className="grid grid-cols-2 md:grid-cols-4 pb-20 md:pb-32 pt-10 md:pt-32" ref={ ref }>
+                    <section className="grid grid-cols-2 md:grid-cols-4 pb-20 md:pb-32 pt-10 md:pt-32">
                         {
 
                             locations.map( ( item, index ) => {
