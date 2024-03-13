@@ -9,8 +9,9 @@ import Container from "@/layouts/container/jsx/index.jsx"
 
 // IMPORTS ATOMS
 import Button from "@/atoms/buttons/transparent/blue/jsx/index.jsx"
-import HeadingTwo from "@/atoms/headings/two/jsx/index.jsx"
 import HeadingThreeOpenSans from "@/atoms/headings/three/open-sans/jsx/index.jsx"
+import HeadingTwo from "@/atoms/headings/two/jsx/index.jsx"
+import Link from "@/atoms/links/jsx/index.jsx"
 import ParagraphXl from "@/atoms/paragraphs/xl/jsx/index.jsx"
 
 // IMPORTS COMPONENTS
@@ -73,6 +74,7 @@ const CaseStudies = ( props ) => {
                                     <div key={ index }>
                                         <CaseStudyCard
                                             alternative_text={ item.title }
+                                            anchor_link={ item.button_link }
                                             anchor_text={ item.button_title }
                                             CDN={ CDN }
                                             description={ item.description }
@@ -80,7 +82,7 @@ const CaseStudies = ( props ) => {
                                             PROJECT={ PROJECT }
                                             source={ item.cover }
                                             title={ item.title }
-                                            top_padding={ index %2 -1 }
+                                            top_padding={ index %2 - 1 }
                                         />
                                     </div>
                                 )
@@ -90,7 +92,9 @@ const CaseStudies = ( props ) => {
                         }
                     </div>
                     <div className="flex md:justify-center">
-                        <Button>View more successes</Button>
+                        <Link href={ case_study.button_link } aria_label={ case_study.button_title }>
+                            <Button>{ case_study.button_title }</Button>
+                        </Link>
                     </div>
                 </div>
             </Container>

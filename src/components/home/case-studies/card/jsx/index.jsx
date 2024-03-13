@@ -8,6 +8,7 @@ import { useInView, useAnimation, motion } from "framer-motion"
 import ArrowAnchor from "@/atoms/arrow-anchor/jsx/index.jsx"
 import HeadingThree from "@/atoms/headings/three/jsx/index.jsx"
 import ParagraphXl from "@/atoms/paragraphs/xl/jsx/index.jsx"
+import Link from "@/atoms/links/jsx"
 
 const CaseStudyCard = ( props ) => {
 
@@ -16,6 +17,7 @@ const CaseStudyCard = ( props ) => {
 
         alternative_text,
         anchor_text,
+        anchor_link,
         description,
         primary_technology,
         source,
@@ -110,7 +112,9 @@ const CaseStudyCard = ( props ) => {
                 initial="hidden"
                 variants={ delayedSlidingVariant }
             >
-                <ArrowAnchor>{ anchor_text }</ArrowAnchor>
+                <Link href={ anchor_link } aria_label={ anchor_text }>
+                    <ArrowAnchor>{ anchor_text }</ArrowAnchor>
+                </Link>
             </motion.div>
         </div>
     )

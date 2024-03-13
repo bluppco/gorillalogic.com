@@ -9,6 +9,7 @@ import Carousel from "@/components/home/solutions/carousel/index.jsx"
 // IMPORTS ASTRO ATOMS
 import Button from "@/atoms/buttons/transparent/white/index.astro"
 import HeadingTwo from "@/atoms/headings/two/white/index.astro"
+import Link from "@/atoms/links/index.astro"
 
 // GET PROPS
 const { data } = Astro.props
@@ -30,7 +31,9 @@ const { data } = Astro.props
 
             }
             <div class="flex justify-center">
-                <Button>{ data.button_title }</Button>
+                <Link href={ data.button_link } aria_label={ data.button_title }>
+                    <Button>{ data.button_title }</Button>
+                </Link>
             </div>
         </section>
     </Container>
