@@ -60,9 +60,9 @@ const Locations = ( props ) => {
                                     source="icons/location-hub.svg"
                                 />
                             </div>
-                            <div className="text-xl uppercase font-open_sans font-semibold text-center tracking-widest">{ data.title }</div>
+                            <h3 className="text-xl uppercase font-open_sans font-semibold text-center tracking-widest">{ data.title }</h3>
                         </div>
-                        <div className="font-lora text-center text-5xl">{ data.sub_title }</div>
+                        <h2 className="font-lora text-center text-5xl">Innovation <span className="text-gl_blue">without</span> borders</h2>
                     </section>
                     <section className="grid grid-cols-2 md:grid-cols-4 pb-20 md:pb-32 pt-10 md:pt-32" ref={ ref }>
                         {
