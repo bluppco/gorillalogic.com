@@ -36,7 +36,7 @@ const Hero = ( props ) => {
                     </div>
                 </section>
             </Container>
-            <section className="absolute top-0 left h-full w-full bg-gradient-to-l from-[#061b36e6] to-[#061b3613]" />
+            <section className="absolute z-0 top-0 left h-full w-full" style={{ background: "linear-gradient(180deg, rgba(6,27,54,.9) 31.04%, rgba(6,27,54,.2) 115.52%)" }} />
             <Link to="solutions" smooth={ true } offset={ -115 }>
                 <div className="animate-bounce size-16 fixed bottom-5 right-16 z-30">
                     <PictureInternalContain
