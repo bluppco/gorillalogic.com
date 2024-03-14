@@ -8,6 +8,7 @@ import { useInView, useAnimation, motion } from "framer-motion"
 import ArrowAnchor from "@/atoms/arrow-anchor/jsx/index.jsx"
 import HeadingThree from "@/atoms/headings/three/jsx/index.jsx"
 import ParagraphXl from "@/atoms/paragraphs/xl/jsx/index.jsx"
+import Link from "@/atoms/links/jsx"
 
 const CaseStudyCard = ( props ) => {
 
@@ -16,6 +17,7 @@ const CaseStudyCard = ( props ) => {
 
         alternative_text,
         anchor_text,
+        anchor_link,
         description,
         primary_technology,
         source,
@@ -55,16 +57,17 @@ const CaseStudyCard = ( props ) => {
 
     return(
         <div className={` ${ top_padding ? "md:mt-32" : "" } space-y-6 `}>
-            <div className="w-full aspect-[3/2] bg-transparent cursor-pointer group perspective">
-                <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-700">
-                    <div className="w-full aspect-[3/2] bg-zinc-200 absolute backface-hidden">
+            <div className="w-full aspect-[3/2] bg-transparent cursor-pointer group">
+                <div className="relative w-full h-full">
+                    <div className="w-full aspect-[3/2] bg-zinc-200">
                         <img
                             alt={ alternative_text }
                             className="h-full w-full"
                             src={ CDN + PROJECT + "/" + source + "?quality=80" + "&width=1200" }
                         />
                     </div>
-                    <div className="absolute my-rotate-y-180 backface-hidden w-full h-full bg-blue-100 overflow-hidden">
+                    {/*
+                    <div className="absolute w-full h-full bg-blue-100 overflow-hidden">
                         <div className="flex flex-col gap-10 p-4 md:p-20">
                             <div className="flex md:gap-2 items-center">
                                 <div className="h-8 aspect-video">
@@ -93,12 +96,13 @@ const CaseStudyCard = ( props ) => {
                             </div>
                         </div>
                     </div>
+                    */}
                 </div>
             </div>
             <motion.div
                 animate={ controls }
                 className="space-y-6" ref={ ref }
-                initial="visible"
+                initial="hidden"
                 variants={ slidingVariant }
             >
                 <HeadingThree>{ title }</HeadingThree>
@@ -107,10 +111,12 @@ const CaseStudyCard = ( props ) => {
             <motion.div
                 animate={ controls }
                 className="space-y-6" ref={ ref }
-                initial="visible"
+                initial="hidden"
                 variants={ delayedSlidingVariant }
             >
-                <ArrowAnchor>{ anchor_text }</ArrowAnchor>
+                <Link href={ anchor_link } aria_label={ anchor_text }>
+                    <ArrowAnchor>{ anchor_text }</ArrowAnchor>
+                </Link>
             </motion.div>
         </div>
     )
