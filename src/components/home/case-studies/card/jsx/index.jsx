@@ -57,16 +57,17 @@ const CaseStudyCard = ( props ) => {
 
     return(
         <div className={` ${ top_padding ? "md:mt-32" : "" } space-y-6 `}>
-            <div className="w-full aspect-[3/2] bg-transparent cursor-pointer group perspective">
-                <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-700">
-                    <div className="w-full aspect-[3/2] bg-zinc-200 absolute backface-hidden">
+            <div className="w-full aspect-[3/2] bg-transparent cursor-pointer group">
+                <div className="relative w-full h-full">
+                    <div className="w-full aspect-[3/2] bg-zinc-200">
                         <img
                             alt={ alternative_text }
                             className="h-full w-full"
                             src={ CDN + PROJECT + "/" + source + "?quality=80" + "&width=1200" }
                         />
                     </div>
-                    <div className="absolute my-rotate-y-180 backface-hidden w-full h-full bg-blue-100 overflow-hidden">
+                    {/*
+                    <div className="absolute w-full h-full bg-blue-100 overflow-hidden">
                         <div className="flex flex-col gap-10 p-4 md:p-20">
                             <div className="flex md:gap-2 items-center">
                                 <div className="h-8 aspect-video">
@@ -95,6 +96,7 @@ const CaseStudyCard = ( props ) => {
                             </div>
                         </div>
                     </div>
+                    */}
                 </div>
             </div>
             <motion.div
