@@ -56,9 +56,9 @@ const CaseStudyCard = ( props ) => {
     }
 
     return(
-        <div className={` ${ top_padding ? "md:mt-32" : "" } space-y-6 `}>
+        <div className={` ${ top_padding ? "md:mt-32" : "" } space-y-6 flip-container`}>
             <div className="w-full aspect-[3/2] bg-transparent cursor-pointer group">
-                <div className="relative w-full h-full">
+                <div className="flipper relative w-full h-full">
                     <div className="w-full aspect-[3/2] bg-zinc-200">
                         <img
                             alt={ alternative_text }
@@ -66,8 +66,7 @@ const CaseStudyCard = ( props ) => {
                             src={ CDN + PROJECT + "/" + source + "?quality=80" + "&width=1200" }
                         />
                     </div>
-                    {/*
-                    <div className="absolute w-full h-full bg-blue-100 overflow-hidden">
+                    <div className="back absolute w-full h-full bg-blue-100 overflow-hidden">
                         <div className="flex flex-col gap-10 p-4 md:p-20">
                             <div className="flex md:gap-2 items-center">
                                 <div className="h-8 aspect-video">
@@ -96,7 +95,6 @@ const CaseStudyCard = ( props ) => {
                             </div>
                         </div>
                     </div>
-                    */}
                 </div>
             </div>
             <motion.div
