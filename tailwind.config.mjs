@@ -1,7 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-
-const plugin = require("tailwindcss/plugin");
-
 module.exports = {
 	darkMode: ["class"],
 	content: [
@@ -74,6 +71,7 @@ module.exports = {
 				"slow_sliding": 'slow_sliding 11s infinite',
 				"bounce": "bounce 2s infinite"
 			},
+
 		},
 	},
 	plugins: [require("tailwindcss-animate")],
