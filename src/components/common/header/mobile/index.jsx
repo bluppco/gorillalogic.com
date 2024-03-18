@@ -14,7 +14,7 @@ const MobileHeader = () => {
     const [ isOpen, updateOpen ] = useState( false )
 
     return (
-        <header className="md:hidden bg-background fixed top-14 px-4 py-6 z-50 w-full">
+        <header className="md:hidden bg-background fixed top-14 px-4 py-6 z-[100] w-full">
             <div className="flex justify-between items-center z-20">
                 <Link href="/" aria_label="gorilla logic logo">
                     <div className="w-28 object-cover">
