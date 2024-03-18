@@ -14,7 +14,7 @@ const MobileHeader = () => {
     const [ isOpen, updateOpen ] = useState( false )
 
     return (
-        <header className="md:hidden bg-background fixed top-16 px-4 py-6 z-20 w-full">
+        <header className="md:hidden bg-background fixed top-14 px-4 py-6 z-50 w-full">
             <div className="flex justify-between items-center z-20">
                 <Link href="/" aria_label="gorilla logic logo">
                     <div className="w-28 object-cover">
@@ -64,7 +64,7 @@ const MobileHeader = () => {
                         transition={{ duration: 0.3 }}
                         className="grow"
                     >
-                        <div className="flex flex-col gap-1 items-center justify-center h-full z-10">
+                        <div className={` ${ isOpen ? "z-10" : "hidden" } flex flex-col gap-1 items-center justify-center h-full`}>
                             <ul className="flex flex-col gap-8">
                                 <li className="text-white font-open_sans font-thin">About Us</li>
                                 <li className="text-white font-open_sans font-thin">Work</li>
