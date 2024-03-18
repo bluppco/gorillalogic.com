@@ -19,7 +19,7 @@ const Hero = ( props ) => {
     } = props
 
     return(
-        <section className="relative mt-32 md:mt-28 py-10 md:pt-32 md:pb-48 h-full w-full bg-bottom bg-cover overflow-hidden bg-no-repeat" style={{ backgroundImage: `url(${CDN + PROJECT + "/" + data.cover + "?quality=80"})` }}>
+        <section className="relative mt-32 md:mt-28 py-10 md:pt-32 md:pb-48 h-full w-full bg-bottom bg-cover overflow-hidden bg-no-repeat" style={{ backgroundImage: `url(${CDN + PROJECT + "/" + data.cover + "?quality=80" + "&width=1600"})` }}>
             <Container>
                 <section className="relative z-10 flex flex-col justify-between h-[600px] md:h-full">
                     <div className="md:w-[80%]">
