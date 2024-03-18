@@ -57,10 +57,10 @@ const CaseStudyCard = ( props ) => {
 
     return(
         <motion.div
-                animate={ controls }
-                className="space-y-6" ref={ ref }
-                initial="hidden"
-                variants={ slidingVariant }
+            animate={ controls }
+            className="space-y-6" ref={ ref }
+            initial="hidden"
+            variants={ slidingVariant }
         >
             <div className={` ${ top_padding ? "md:mt-32" : "" } space-y-6 `}>
                 <div className="space-y-6 flip-container">
