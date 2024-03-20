@@ -16,10 +16,10 @@ const MobileHeader = () => {
     return (
         <header className="md:hidden bg-background fixed top-14 px-4 py-6 z-[100] w-full">
             <div className="flex justify-between items-center z-20">
-                <Link href="/" aria_label="gorilla logic logo">
+                <Link href="/" aria_label="logo">
                     <div className="w-28 object-cover">
                         <PictureInternal
-                            alternative_text="gorilla logic logo"
+                            alternative_text="logo"
                             source="/logo/gl_logo.svg"
                         />
                     </div>
